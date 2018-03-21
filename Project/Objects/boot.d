@@ -1,0 +1,55 @@
+.\objects\boot.o: ..\User\Src\BSP\Boot.c
+.\objects\boot.o: ..\User\Inc\BSP\Boot.h
+.\objects\boot.o: ..\User\Inc\BSP\MyFunc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx.h
+.\objects\boot.o: ..\Libraries\core_cm4.h
+.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdint.h
+.\objects\boot.o: ..\Libraries\core_cmInstr.h
+.\objects\boot.o: ..\Libraries\core_cmFunc.h
+.\objects\boot.o: ..\Libraries\core_cm4_simd.h
+.\objects\boot.o: ..\Libraries\system_stm32f4xx.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_conf.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_adc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_crc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_dbgmcu.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_dma.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_exti.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_flash.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_gpio.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_i2c.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_iwdg.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_pwr.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_rcc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_rtc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_sdio.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_spi.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_syscfg.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_tim.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_usart.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_wwdg.h
+.\objects\boot.o: ..\Libraries\misc.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_cryp.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_hash.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_rng.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_can.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_dac.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_dcmi.h
+.\objects\boot.o: ..\Libraries\stm32f4xx_fsmc.h
+.\objects\boot.o: ..\User\Inc\BSP\sys.h
+.\objects\boot.o: ..\User\Inc\BSP\delay.h
+.\objects\boot.o: ..\Libraries\sys.h
+.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdio.h
+.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
+.\objects\boot.o: ..\User\Inc\BSP\Clock.h
+.\objects\boot.o: ..\User\Inc\Task\ComunicateTask.h
+.\objects\boot.o: ..\User\Inc\Task\PidTask.h
+.\objects\boot.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\boot.o: ..\User\Inc\Task\ControlTask.h
+.\objects\boot.o: ..\User\Inc\Task\Holder.h
+.\objects\boot.o: ..\User\Inc\IMU\6050.h
+.\objects\boot.o: ..\User\Inc\IMU\I2C.h
+.\objects\boot.o: ..\User\Inc\BSP\Communication.h
+.\objects\boot.o: ..\User\Inc\IMU\Imu.h
+.\objects\boot.o: ..\User\Inc\Referee\Referee.h
+.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h

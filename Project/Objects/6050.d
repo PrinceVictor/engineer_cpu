@@ -1,0 +1,44 @@
+.\objects\6050.o: ..\User\Src\IMU\6050.c
+.\objects\6050.o: ..\User\Inc\IMU\6050.h
+.\objects\6050.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdint.h
+.\objects\6050.o: ..\Libraries\stm32f4xx.h
+.\objects\6050.o: ..\Libraries\core_cm4.h
+.\objects\6050.o: ..\Libraries\core_cmInstr.h
+.\objects\6050.o: ..\Libraries\core_cmFunc.h
+.\objects\6050.o: ..\Libraries\core_cm4_simd.h
+.\objects\6050.o: ..\Libraries\system_stm32f4xx.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_conf.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_adc.h
+.\objects\6050.o: ..\Libraries\stm32f4xx.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_crc.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_dbgmcu.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_dma.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_exti.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_flash.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_gpio.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_i2c.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_iwdg.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_pwr.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_rcc.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_rtc.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_sdio.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_spi.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_syscfg.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_tim.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_usart.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_wwdg.h
+.\objects\6050.o: ..\Libraries\misc.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_cryp.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_hash.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_rng.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_can.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_dac.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_dcmi.h
+.\objects\6050.o: ..\Libraries\stm32f4xx_fsmc.h
+.\objects\6050.o: ..\User\Inc\IMU\I2C.h
+.\objects\6050.o: ..\User\Inc\BSP\MyFunc.h
+.\objects\6050.o: ..\User\Inc\BSP\sys.h
+.\objects\6050.o: ..\User\Inc\BSP\delay.h
+.\objects\6050.o: ..\Libraries\sys.h
+.\objects\6050.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdio.h
+.\objects\6050.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
