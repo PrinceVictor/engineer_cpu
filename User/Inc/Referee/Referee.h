@@ -28,6 +28,15 @@ typedef struct
 
 typedef struct
 {
+	uint8_t flag;
+	float d1;
+	float d2;
+	float angle;
+  
+}_lidar_message;
+
+typedef struct
+{
 	uint8_t weakid;
 	uint8_t weak;
 	uint16_t ValueChange;
@@ -80,7 +89,7 @@ void mainfoldConfig(void);
 extern _JUDGMENT_01_DATA Judgment_01_data;
 extern _JUDGMENT_02_DATA Judgment_02_data;
 extern _JUDGMENT_03_DATA Judgment_03_data;
-
+extern _lidar_message lidar;
 void send_odm_msg(float *);
 
 extern uint8_t Tx_Buf[TX_LEN];

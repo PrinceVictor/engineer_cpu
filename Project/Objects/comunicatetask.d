@@ -43,3 +43,5 @@
 .\objects\comunicatetask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
 .\objects\comunicatetask.o: ..\User\Inc\Task\PidTask.h
 .\objects\comunicatetask.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\comunicatetask.o: ..\User\Inc\Referee\Referee.h
+.\objects\comunicatetask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h

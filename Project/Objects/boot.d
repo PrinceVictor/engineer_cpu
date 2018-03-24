@@ -45,11 +45,11 @@
 .\objects\boot.o: ..\User\Inc\Task\ComunicateTask.h
 .\objects\boot.o: ..\User\Inc\Task\PidTask.h
 .\objects\boot.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\boot.o: ..\User\Inc\Referee\Referee.h
+.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\boot.o: ..\User\Inc\Task\ControlTask.h
 .\objects\boot.o: ..\User\Inc\Task\Holder.h
 .\objects\boot.o: ..\User\Inc\IMU\6050.h
 .\objects\boot.o: ..\User\Inc\IMU\I2C.h
 .\objects\boot.o: ..\User\Inc\BSP\Communication.h
 .\objects\boot.o: ..\User\Inc\IMU\Imu.h
-.\objects\boot.o: ..\User\Inc\Referee\Referee.h
-.\objects\boot.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h

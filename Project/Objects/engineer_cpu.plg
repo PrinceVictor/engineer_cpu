@@ -8,429 +8,569 @@ Project File Date:  03/10/2018
 
 <h2>Output:</h2>
 Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(257): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
 linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(257): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(258): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(258): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
+Program Size: Code=29306 RO-data=1526 RW-data=452 ZI-data=3348  
 FromELF: creating hex file...
 ".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
 Build target 'engineer_cpu'
-compiling ChassisTask.c...
 linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
+Program Size: Code=29306 RO-data=1526 RW-data=452 ZI-data=3348  
 FromELF: creating hex file...
 ".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(258): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28930 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28930 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(258): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28914 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(258): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28922 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(257): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28922 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Build target 'engineer_cpu'
+Rebuild target 'engineer_cpu'
 compiling main.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 ..\User\Src\main.c(17): warning:  #111-D: statement is unreachable
-compiling Clock.c...
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(257): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28946 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28946 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling Imu.c...
-..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
-..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
-..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
-..\User\Src\IMU\Imu.c(257): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling main.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-..\User\Src\main.c(17): warning:  #111-D: statement is unreachable
+compiling sys.c...
+compiling delay.c...
 compiling Boot.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 compiling Clock.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 compiling Communication.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling MyFunc.c...
+compiling IWDG.c...
+compiling 6050.c...
+compiling I2C.c...
 compiling Imu.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 ..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
 ..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
 ..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
 ..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
 compiling ControlTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling ComunicateTask.c...
+compiling holder.c...
+..\User\Src\Task\holder.c(44): warning:  #1-D: last line of file ends without a newline
 compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 12 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\Task\ChassisTask.c(10): error:  #29: expected an expression
+..\User\Src\Task\ChassisTask.c(75): error:  #20: identifier "chassis" is undefined
+..\User\Src\Task\ChassisTask.c(161): error:  #29: expected an expression
+..\User\Src\Task\ChassisTask.c(166): warning:  #940-D: missing return statement at end of non-void function "Lidar_Func"
+..\User\Src\Task\ChassisTask.c(150): warning:  #177-D: variable "flag" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(151): warning:  #550-D: variable "d2" was set but never used
+compiling PidTask.c...
+..\User\Src\Task\PidTask.c(11): warning:  #177-D: variable "last_target" was declared but never referenced
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+assembling startup_stm32f40_41xxx.s...
+compiling misc.c...
+compiling stm32f4xx_adc.c...
+compiling stm32f4xx_can.c...
+compiling stm32f4xx_usart.c...
+compiling system_stm32f4xx.c...
+..\Libraries\system_stm32f4xx.c(423): warning:  #550-D: variable "a" was set but never used
+..\Libraries\system_stm32f4xx.c(423): warning:  #550-D: variable "b" was set but never used
+compiling stm32f4xx_iwdg.c...
+compiling stm32f4xx_i2c.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_pwr.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_rtc.c...
+compiling stm32f4xx_tim.c...
+compiling stm32f4xx_dma.c...
+".\Objects\engineer_cpu.axf" - 3 Errors, 23 Warning(s).
+Target not created
 Build target 'engineer_cpu'
 compiling ControlTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\Task\ChassisTask.c(10): error:  #29: expected an expression
+..\User\Src\Task\ChassisTask.c(75): error:  #20: identifier "chassis" is undefined
+..\User\Src\Task\ChassisTask.c(161): error:  #29: expected an expression
+..\User\Src\Task\ChassisTask.c(166): warning:  #940-D: missing return statement at end of non-void function "Lidar_Func"
+..\User\Src\Task\ChassisTask.c(150): warning:  #177-D: variable "flag" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(151): warning:  #550-D: variable "d2" was set but never used
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+".\Objects\engineer_cpu.axf" - 3 Errors, 9 Warning(s).
+Target not created
 Build target 'engineer_cpu'
+compiling main.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\main.c(17): warning:  #111-D: statement is unreachable
+compiling Boot.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Clock.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Communication.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Imu.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling ComunicateTask.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
 compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling PidTask.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Task\PidTask.c(11): warning:  #177-D: variable "last_target" was declared but never referenced
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(261): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(262): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
 linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol recieveData multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol lidar multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol meta_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_01_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_03_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_04_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Tx_Buf multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol re_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_INIT multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC8_TAB multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol wCRC_Table multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Flag_Uart_Busy multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol dara multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol time_count multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol CRC_INIT multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Judgment_02_data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_V multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_A multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_W multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_J multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_ss multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_sf multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bs multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol temp_bf multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol refereeConfig multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol mainfoldConfig multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol DMA1_Stream6_IRQHandler multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol New_Send_Data multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_odm_msg multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol send_check multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART3_IRQHandler multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol USART2_IRQHandler multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC16_Check_Sum multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC16_Check_Sum multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Get_CRC8_Check_Sum multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Append_CRC8_Check_Sum multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol SendtoReferee multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC8_Check_Sum multiply defined (by referee.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by boot.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by clock.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by communication.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by imu.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by controltask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by comunicatetask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by chassistask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by pidtask.o and main.o).
+.\Objects\engineer_cpu.axf: Error: L6200E: Symbol Verify_CRC16_Check_Sum multiply defined (by referee.o and main.o).
+".\Objects\engineer_cpu.axf" - 351 Errors, 53 Warning(s).
+Target not created
 Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\main.c(17): warning:  #111-D: statement is unreachable
+compiling Boot.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Clock.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Communication.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Imu.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling ComunicateTask.c...
 compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28938 RO-data=1526 RW-data=412 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 compiling PidTask.c...
 ..\User\Src\Task\PidTask.c(11): warning:  #177-D: variable "last_target" was declared but never referenced
 linking...
-Program Size: Code=28850 RO-data=1526 RW-data=412 ZI-data=3316  
+Program Size: Code=29348 RO-data=1588 RW-data=452 ZI-data=3348  
 FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
+".\Objects\engineer_cpu.axf" - 0 Errors, 13 Warning(s).
 Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\main.c(17): warning:  #111-D: statement is unreachable
+compiling Boot.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Clock.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Communication.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling Imu.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+compiling ComunicateTask.c...
+compiling ChassisTask.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
 compiling PidTask.c...
 ..\User\Src\Task\PidTask.c(11): warning:  #177-D: variable "last_target" was declared but never referenced
 linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
+Program Size: Code=29364 RO-data=1588 RW-data=452 ZI-data=3348  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 13 Warning(s).
+Build target 'engineer_cpu'
+compiling ControlTask.c...
+..\User\Inc\Task\ControlTask.h(25): warning:  #1295-D: Deprecated declaration angle_update - give arg types
+linking...
+Program Size: Code=29364 RO-data=1588 RW-data=452 ZI-data=3348  
 FromELF: creating hex file...
 ".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28970 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Build target 'engineer_cpu'
-compiling ChassisTask.c...
-..\User\Inc\Task\ControlTask.h(24): warning:  #1295-D: Deprecated declaration angle_update - give arg types
-linking...
-Program Size: Code=28962 RO-data=1526 RW-data=452 ZI-data=3316  
-FromELF: creating hex file...
-".\Objects\engineer_cpu.axf" - 0 Errors, 1 Warning(s).
-Load "E:\\RM2018\\engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...

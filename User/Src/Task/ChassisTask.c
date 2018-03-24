@@ -4,7 +4,10 @@
 
 _wheelPara wheelInfo = {0};
 _chassis chassisPara = {0};
-
+int8_t lidar_flag;
+int const postion[8][2] = {
+	{25,360+ 310*4},{25,360+ 310*3},{25,360+ 310*2},{25,360+ 310*1},{25,360+ 310*0},{275+130,25},{275+130*1,25},{275+130*2,25}
+};
 _pid_Para wheelpid = {
 	60,	// kp
 	0.75f,	// ki
@@ -12,7 +15,7 @@ _pid_Para wheelpid = {
 	1,	// i flag
 	0,	// d flag
 	1000,	// i limit
-	5000,	// out limit, limit range from -32768 ~ 32768
+	1500,	// out limit, limit range from -32768 ~ 32768
 	3	//mode flag,  0 for disable, 3 for interval isolate
 };
 
@@ -64,7 +67,7 @@ int8_t chassisControl(uint8_t flag)
 }
 	else{
 	//pid for angle
-//		chassisPara.Rt = 
+//		chassisPara.Rt =
 			pidGet(&chassisPara.pid.shell.k_para,
 														&chassisPara.pid.shell.pid,		
 														chassisPara.yaw.target,
@@ -79,18 +82,19 @@ int8_t chassisControl(uint8_t flag)
 		
 		chassisPara.yaw.last_target = chassisPara.yaw.target;
 		
-		Send_data[0] = (float)chassisPara.yaw.angle ; 
-		Send_data[1] = (float)chassisPara.yaw.target;
-//		Send_data[2] = (float)wheelInfo.pid[1].Out;
-//		Send_data[3] = (float)wheelInfo.feedback.Speed[1];
+//		Send_data[0] = (float)chassisPara.yaw.angle ; 
+//		Send_data[1] = (float)chassisPara.yaw.target;
+////		Send_data[2] = (float)wheelInfo.pid[1].Out;
+////		Send_data[3] = (float)wheelInfo.feedback.Speed[1];
 
-		Send_data[2] = (float)chassisPara.pid.core.pid.feedback; 
-		Send_data[3] = (float)chassisPara.pid.shell.pid.Out;
+//		Send_data[2] = (float)chassisPara.pid.core.pid.feedback; 
+//		Send_data[3] = (float)chassisPara.pid.shell.pid.Out;
+////		Send_data[4] = (float)chassisPara.pid.core.pid.Out;
 //		Send_data[4] = (float)chassisPara.pid.core.pid.Out;
-		Send_data[4] = (float)chassisPara.pid.core.pid.Out;
 		
 //		chassisPara.Rt = 0;
 	//wheel solute
+	
 		wheelSolute(&wheelInfo, &chassisPara);
 	//pid for wheels
 		for(i=0; i<4; i++){
@@ -123,4 +127,38 @@ int8_t wheelSolute(_wheelPara* para, _chassis* chassis){
 	return 1;
 }
 
-
+int8_t Lidar_Func(const uint8_t control_flag, const _lidar_message* lidar, int8_t pos){
+	static uint8_t lidar_flag;
+	float d1,d2,angle;
+	if(control_flag != 1){
+		if(lidar_flag){
+			lidar_flag = 0;
+			chassisPara.Rt = 0;
+			chassisPara.yaw.target = 0;
+			chassisPara.yaw.angle = 0;
+			lidar_flag = 1;
+}
+		return 0;
+}
+	else{
+		if(lidar->flag){
+		d1 = lidar->d1;
+		d2 = lidar->d2;
+		if(abs(lidar->angle)<0.5f) angle =0;
+		else angle = lidar->angle/160;
+		chassisPara.yaw.target = chassisPara.yaw.target + angle;
+		chassisPara.Fb = amplitudeLimiting(1, (d1 - postion[pos][0])/10.0f, 200);
+		chassisPara.Lr = amplitudeLimiting(1, (d2 - postion[pos][1])/10.0f, 150);
+		lidar_flag = 1;
+		return 1;
+}
+else{
+		chassisPara.Rt = 0;
+		chassisPara.yaw.target = 0;
+		chassisPara.yaw.angle = 0;
+		lidar_flag = 1;
+	return -1;
+}
+	
+}
+}

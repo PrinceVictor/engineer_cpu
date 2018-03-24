@@ -44,6 +44,8 @@
 .\objects\communication.o: ..\User\Inc\Task\ComunicateTask.h
 .\objects\communication.o: ..\User\Inc\Task\PidTask.h
 .\objects\communication.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\communication.o: ..\User\Inc\Referee\Referee.h
+.\objects\communication.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\communication.o: ..\User\Inc\Task\ControlTask.h
 .\objects\communication.o: ..\User\Inc\Task\Holder.h
 .\objects\communication.o: ..\User\Inc\IMU\6050.h

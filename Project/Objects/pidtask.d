@@ -42,3 +42,5 @@
 .\objects\pidtask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdio.h
 .\objects\pidtask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
 .\objects\pidtask.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\pidtask.o: ..\User\Inc\Referee\Referee.h
+.\objects\pidtask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h

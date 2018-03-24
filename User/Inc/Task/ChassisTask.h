@@ -3,6 +3,7 @@
 
 #include "MyFunc.h"
 #include "PidTask.h"
+#include "Referee.h"
 
 typedef struct{
 	float target;
@@ -45,6 +46,7 @@ typedef struct wheelPara{
 extern _wheelPara wheelInfo;
 extern _chassis chassisPara;
 
+int8_t Lidar_Func(const uint8_t , const _lidar_message* , int8_t );
 int8_t chassisControl(uint8_t);
 int8_t wheelSolute(_wheelPara*, _chassis*);
 int8_t allParaInit(void);

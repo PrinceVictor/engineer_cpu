@@ -1,8 +1,8 @@
 #include "referee.h"
 /*-----USART3_TX-----PB10-----*/
 /*-----USART3_RX-----PB11-----*/
-uint32_t recieveData={0};
-
+uint8_t recieveData[14]={0};
+_lidar_message lidar;
 uint8_t meta_data[BSP_USART3_DMA_RX_BUF_LEN];
 
 _JUDGMENT_01_DATA Judgment_01_data;
@@ -159,7 +159,7 @@ void mainfoldConfig(void)
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&(USART3->DR);
     DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)recieveData;//(uint32_t)EnemyData;
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-    DMA_InitStructure.DMA_BufferSize = 5;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
+    DMA_InitStructure.DMA_BufferSize = 14;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
     DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
@@ -270,11 +270,30 @@ void USART3_IRQHandler(void)
 		{
 			DMA_Cmd(DMA1_Stream1, DISABLE);
     
-			this_time_rx_len = 5 - DMA_GetCurrDataCounter(DMA1_Stream1);
+			this_time_rx_len = 14 - DMA_GetCurrDataCounter(DMA1_Stream1);
 		
-			DMA1_Stream1->NDTR = (uint16_t)5;     //relocate the dma memory pointer to the beginning position
+			DMA1_Stream1->NDTR = (uint16_t)14;     //relocate the dma memory pointer to the beginning position
 			//DMA1_Stream1->CR |= (uint32_t)(DMA_SxCR_CT);                  //enable the current selected memory is Memory 1
 			DMA_Cmd(DMA1_Stream1, ENABLE);
+			if(recieveData[0] ==  0xab){
+			lidar.flag = recieveData [13];
+
+			BYTE0(lidar.d1) = recieveData[0+1 + 0*4];
+      BYTE1(lidar.d1) = recieveData[1+1 + 0*4];
+      BYTE2(lidar.d1) = recieveData[2+1+ 0*4];
+      BYTE3(lidar.d1) = recieveData[3+1+ 0*4];
+				
+			BYTE0(lidar.d2) = recieveData[0+1 + 1*4];
+      BYTE1(lidar.d2) = recieveData[1+1 + 1*4];
+      BYTE2(lidar.d2) = recieveData[2+1+ 1*4];
+      BYTE3(lidar.d2) = recieveData[3+1+ 1*4];
+				
+			BYTE0(lidar.angle) = recieveData[0+1 + 2*4];
+      BYTE1(lidar.angle) = recieveData[1+1 + 2*4];
+      BYTE2(lidar.angle) = recieveData[2+1+ 2*4];
+      BYTE3(lidar.angle) = recieveData[3+1+ 2*4];
+}
+
 }
 }
 }

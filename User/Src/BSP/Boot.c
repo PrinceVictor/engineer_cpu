@@ -15,7 +15,7 @@ void boot(void){
 	sysConfig();
 	
 	remoteConfig();
-//	mainfoldConfig();
+	mainfoldConfig();
 	clockConfig();
 }
 

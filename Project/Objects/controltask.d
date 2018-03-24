@@ -43,6 +43,8 @@
 .\objects\controltask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
 .\objects\controltask.o: ..\User\Inc\Task\ChassisTask.h
 .\objects\controltask.o: ..\User\Inc\Task\PidTask.h
+.\objects\controltask.o: ..\User\Inc\Referee\Referee.h
+.\objects\controltask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\controltask.o: ..\User\Inc\Task\ComunicateTask.h
 .\objects\controltask.o: ..\User\Inc\Task\Holder.h
 .\objects\controltask.o: ..\User\Inc\IMU\6050.h

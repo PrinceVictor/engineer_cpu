@@ -6,6 +6,7 @@
 #include "ComunicateTask.h"
 #include "Holder.h"
 #include "6050.h"
+#include "Referee.h"
 
 #define init 1
 #define run	 2

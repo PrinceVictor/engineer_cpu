@@ -9,7 +9,7 @@ int flag = 0;
 int duoji_flag = 0;
 
 int8_t runControl(_sysState* sys){
-	angle_update();
+	
 	switch(sys->state){
 		case init:{
 			if(allParaInit())
@@ -37,8 +37,10 @@ int8_t runControl(_sysState* sys){
 			sys->state = commuiModeChange(&sys->remoteOrkeyboard,
 															&remote, 
 															&chassisPara);
-			;
+			angle_update();
 //			mode 1 to transferType,  mode 2 to read speed, 3 to read position
+			Lidar_Func(remote.rc.s2,&lidar,0);
+			
 			canTrans(chassisControl(1), 1, &canM, wheelInfo.out);
 //			canTrans(holder_Control(0), 2, &canM, motor.out);
 //			can1Trans(1);
@@ -62,7 +64,7 @@ int8_t runControl(_sysState* sys){
 }		
 	return 1;
 }
-void angle_update(){
+void angle_update(void){
 	
 	chassisPara.yaw.angle_speed = - sensor.gyro.radian.z * 57.3f  ;
 	if(  abs( chassisPara.yaw.angle_speed ) <0.5f)
