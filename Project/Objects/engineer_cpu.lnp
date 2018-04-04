@@ -15,6 +15,7 @@
 ".\objects\holder.o"
 ".\objects\chassistask.o"
 ".\objects\pidtask.o"
+".\objects\relay.o"
 ".\objects\referee.o"
 ".\objects\startup_stm32f40_41xxx.o"
 ".\objects\misc.o"

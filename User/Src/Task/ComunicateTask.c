@@ -15,13 +15,70 @@ uint8_t can1Recieve = 0;
 
 
 int8_t commuiModeChange(int8_t* flag, _RC_Ctl* data, _chassis* chassis){
-	if( data->rc.s1 == 2)	*flag = 0;
-	else *flag = 1;
-	if(data->rc.s1 == 1) return 0;
-	if(*flag) remoteControl(data , chassis); 
-	else computerControl(data , chassis);	
+	static uint8_t key_press_flag = 0;
 	key.clock_cnt ++;
-	return 2;
+	switch (data->rc.s1){
+		case 3:{
+			*flag = 1;
+			relay_flag.can1_flag = 0;
+			remoteControl(data , chassis);
+			Lidar_Func(data->rc.s2,&lidar,0);
+			return 2;
+		}
+		case 2:{
+			*flag = 0;
+		switch(data->key.v){
+			case  0:{
+				key_press_flag = 0;
+				break;
+}
+			case key_R:{
+				if(!key_press_flag){
+			if(relay_flag.autolanding)  {
+				relay_flag.autolanding = 0;
+				relay_flag.can1_flag = 0x00;
+}
+			else {
+				relay_flag.autolanding = 1;
+				relay_flag.can1_flag = 0x01;
+			}
+				key_press_flag = 1;
+		}
+			break;
+}
+		case key_Ctrl|key_R :{	
+			if(!key_press_flag){
+			if(relay_flag.manuallanding) {
+				relay_flag.manuallanding =0;
+				relay_flag.can1_flag = 0;
+			}
+			else {
+				if(relay_flag.autolanding){
+					relay_flag.autolanding = 0;
+					relay_flag.manuallanding = 1;
+					}
+				else{
+					relay_flag.manuallanding = 1;
+					relay_flag.can1_flag = 0x01;
+					}				
+					
+			}
+			key_press_flag = 1;
+		}
+			break;
+}
+}
+			computerControl(data , chassis);
+			return 2;
+		}
+		case 1:{
+			*flag = 1;
+			relay_flag.can1_flag = 0;
+			return 0;
+		}
+		default: return 2;
+}
+		
 }
 
 int8_t readRemote(_RC_Ctl* data, unsigned char * buffer){
@@ -73,10 +130,10 @@ int8_t remoteControl(_RC_Ctl* data, _chassis* chassis){
 	if(abs( data->rc.ch0-1024)> 100){
 			key.AD.isSameKey = 1;
 		if(( data->rc.ch0-1024)> 100){
-		speed.Lr = speed.normal_LR*RampCal(&key.AD);
+		speed.Lr = -speed.normal_LR*RampCal(&key.AD);
 		}
 		else if(( data->rc.ch0-1024)< -100){
-		speed.Lr = -speed.normal_LR*RampCal(&key.AD);
+		speed.Lr = speed.normal_LR*RampCal(&key.AD);
 		}
 	 }
 	else{
@@ -90,9 +147,9 @@ int8_t remoteControl(_RC_Ctl* data, _chassis* chassis){
 	if(abs( 1024 - data->rc.ch2 )< 50)  data->rc.ch2 = 1024;
 	chassis->yaw.temp = \
 		( 1024 - data->rc.ch2 ) * 0.0005f;//测试视觉时，注释此举
-	chassis->yaw.temp = amplitudeLimiting(1 , chassis->yaw.temp , 60);
+	chassis->yaw.temp = amplitudeLimiting(1 , chassis->yaw.temp , 0.25f);
 	
-	chassis->yaw.target = chassis->yaw.target - chassis->yaw.temp ;
+	chassis->yaw.target = chassis->yaw.target + chassis->yaw.temp ;
 	
 	 if(count > 5){
 		if(chassis->yaw.target != chassis->yaw.last_target) chassis->yaw.target_changeMode = 1;
@@ -214,6 +271,17 @@ void transferType(int8_t mode, _canMessage* message, int16_t* data){
 				message->canTx.Data[0+i*2] = (uint8_t)(*(data+i) >> 8);
 				message->canTx.Data[1+i*2] = (uint8_t)(*(data+i));
 			}
+			break;}
+		case 3:{
+			message->canTx.StdId = 0x006;
+			message->canTx.IDE=CAN_ID_STD;					
+			message->canTx.RTR=CAN_RTR_DATA;				 
+			message->canTx.DLC=8;		
+			message->canTx.Data[0] = (uint8_t)(*data);
+//			for(i=0; i<2; i++){
+//				message->canTx.Data[0+i*2] = (uint8_t)(*(data+i) >> 8);
+//				message->canTx.Data[1+i*2] = (uint8_t)(*(data+i));
+//			}
 			break;}
 		default:  break;}	
 }

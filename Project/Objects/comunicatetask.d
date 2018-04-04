@@ -45,3 +45,5 @@
 .\objects\comunicatetask.o: ..\User\Inc\Task\ChassisTask.h
 .\objects\comunicatetask.o: ..\User\Inc\Referee\Referee.h
 .\objects\comunicatetask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
+.\objects\comunicatetask.o: ..\User\Inc\Task\Relay.h
+.\objects\comunicatetask.o: ..\User\Inc\Task\ComunicateTask.h

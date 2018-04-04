@@ -48,6 +48,8 @@
 .\objects\main.o: ..\User\Inc\Task\ChassisTask.h
 .\objects\main.o: ..\User\Inc\Referee\Referee.h
 .\objects\main.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
+.\objects\main.o: ..\User\Inc\Task\Relay.h
+.\objects\main.o: ..\User\Inc\Task\ComunicateTask.h
 .\objects\main.o: ..\User\Inc\Task\ControlTask.h
 .\objects\main.o: ..\User\Inc\Task\Holder.h
 .\objects\main.o: ..\User\Inc\IMU\6050.h

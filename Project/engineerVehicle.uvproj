@@ -492,6 +492,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Src\Task\PidTask.c</FilePath>
             </File>
+            <File>
+              <FileName>Relay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\Task\Relay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

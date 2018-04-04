@@ -25,6 +25,7 @@ int16_t pidGet(_pid_Para* pidPara,
 			else {
 				pidPara ->i_flag = 0;
 				pidOut -> i_interval = 0;
+				pidOut ->i_Out = 0;
 			}
 			break;
 }		

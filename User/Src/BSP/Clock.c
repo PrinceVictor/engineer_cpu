@@ -30,7 +30,7 @@ void clockConfig(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0); 
 	nvic.NVIC_IRQChannel=TIM8_BRK_TIM12_IRQn; 
 	nvic.NVIC_IRQChannelPreemptionPriority=0; 
-	nvic.NVIC_IRQChannelSubPriority=2; 
+	nvic.NVIC_IRQChannelSubPriority=1; 
 	nvic.NVIC_IRQChannelCmd=ENABLE;
 	NVIC_Init(&nvic);
 	

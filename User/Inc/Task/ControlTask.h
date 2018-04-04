@@ -7,6 +7,7 @@
 #include "Holder.h"
 #include "6050.h"
 #include "Referee.h"
+#include "Relay.h"
 
 #define init 1
 #define run	 2
@@ -20,8 +21,10 @@ typedef struct{
 	int8_t remoteOrkeyboard;  // 1 for remote, 0 for keyboard and mouse
 }_sysState;
 
+
+extern int16_t* Key_detect(const _RC_Ctl*);
 extern _sysState sys;
 extern int8_t runControl(_sysState*);
-void angle_update();
+void angle_update(void);
 #endif 
 

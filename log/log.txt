@@ -2,4 +2,18 @@
 	
 	Construct architectrue of Engineer Vehicle
 	
-//	
+//	-April 3rd
+	
+	remote control
+	
+					left	s1    		   right	s2
+
+-> up 1			state stop				 
+
+-> up 1									   lidar auto localisation
+-> mid 3		manual control			   normal
+-> down 2								   landing island (expand all)
+			
+-> up 1									   normal
+-> mid 3								   normal
+-> down 2		computer control		   normal

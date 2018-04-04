@@ -1,0 +1,49 @@
+.\objects\relay.o: ..\User\Src\Task\Relay.c
+.\objects\relay.o: ..\User\Inc\Task\Relay.h
+.\objects\relay.o: ..\User\Inc\BSP\MyFunc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx.h
+.\objects\relay.o: ..\Libraries\core_cm4.h
+.\objects\relay.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdint.h
+.\objects\relay.o: ..\Libraries\core_cmInstr.h
+.\objects\relay.o: ..\Libraries\core_cmFunc.h
+.\objects\relay.o: ..\Libraries\core_cm4_simd.h
+.\objects\relay.o: ..\Libraries\system_stm32f4xx.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_conf.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_adc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_crc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_dbgmcu.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_dma.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_exti.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_flash.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_gpio.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_i2c.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_iwdg.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_pwr.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_rcc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_rtc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_sdio.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_spi.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_syscfg.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_tim.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_usart.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_wwdg.h
+.\objects\relay.o: ..\Libraries\misc.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_cryp.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_hash.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_rng.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_can.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_dac.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_dcmi.h
+.\objects\relay.o: ..\Libraries\stm32f4xx_fsmc.h
+.\objects\relay.o: ..\User\Inc\BSP\sys.h
+.\objects\relay.o: ..\User\Inc\BSP\delay.h
+.\objects\relay.o: ..\Libraries\sys.h
+.\objects\relay.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\stdio.h
+.\objects\relay.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\math.h
+.\objects\relay.o: ..\User\Inc\Task\ComunicateTask.h
+.\objects\relay.o: ..\User\Inc\Task\PidTask.h
+.\objects\relay.o: ..\User\Inc\Task\ChassisTask.h
+.\objects\relay.o: ..\User\Inc\Referee\Referee.h
+.\objects\relay.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
+.\objects\relay.o: ..\User\Inc\Task\Relay.h

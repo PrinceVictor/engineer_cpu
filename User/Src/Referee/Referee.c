@@ -3,6 +3,7 @@
 /*-----USART3_RX-----PB11-----*/
 uint8_t recieveData[14]={0};
 _lidar_message lidar;
+
 uint8_t meta_data[BSP_USART3_DMA_RX_BUF_LEN];
 
 _JUDGMENT_01_DATA Judgment_01_data;
@@ -54,7 +55,7 @@ void refereeConfig(void){
     
 		USART_Cmd(USART2,ENABLE);
 				
-		memset(meta_data, 0xff, sizeof(meta_data));
+	//	memset(meta_data, 0xff, sizeof(meta_data));
 			
 		DMA_DeInit(DMA1_Stream5);
     DMA_InitStructure.DMA_Channel= DMA_Channel_4;

@@ -11,7 +11,7 @@
 #define BYTE2(dwTemp)       (*((char *)(&dwTemp) + 2))
 #define BYTE3(dwTemp)       (*((char *)(&dwTemp) + 3))
 
-#define BSP_USART3_DMA_RX_BUF_LEN	80u
+#define BSP_USART3_DMA_RX_BUF_LEN	80
 #define REFEREE_REV_DMA_CNT (DMA1_Stream1->MA_CNDTR)//DMA?????
 
 typedef struct

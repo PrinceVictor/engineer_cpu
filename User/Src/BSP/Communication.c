@@ -325,6 +325,9 @@ void CAN2_RX0_IRQHandler(void)
 			
 			wheelInfo.feedback.Speed[canM.canRx.StdId - 0x201] = canM.canRx.Data[2]*256 +canM.canRx.Data[3];
 		}
+		else if(canM.canRx.StdId == 0x001){
+				can1Recieve = canM1.canRx.Data[0];
+}
 		
 
    }

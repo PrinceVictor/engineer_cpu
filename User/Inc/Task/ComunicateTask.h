@@ -6,8 +6,8 @@
 #include "ChassisTask.h"
 #include "stm32f4xx_can.h"
 #include "math.h"
-
-
+#include "Referee.h"
+#include "Relay.h"
 #define YAW_SENSITY 0.050f		// Û±Íyaw÷·¡È√Ù∂»
 #define PITCH_SENSITY 0.03f	// Û±Ípitch÷·¡È√Ù∂»
 
