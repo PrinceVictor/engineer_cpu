@@ -150,7 +150,7 @@ void remoteConfig(void){
 	USART_DMACmd(USART1,USART_DMAReq_Rx,ENABLE);
 	
 	nvic.NVIC_IRQChannel = USART1_IRQn;                          
-	nvic.NVIC_IRQChannelPreemptionPriority = 0;   //pre-emption priority 
+	nvic.NVIC_IRQChannelPreemptionPriority = 1;   //pre-emption priority 
 	nvic.NVIC_IRQChannelSubPriority = 0;		    //subpriority 
 	nvic.NVIC_IRQChannelCmd = ENABLE;			
 	NVIC_Init(&nvic);	
@@ -264,7 +264,7 @@ void USART1_IRQHandler(void)
 			DMA2_Stream2->CR |= (uint32_t)(DMA_SxCR_CT);                  //enable the current selected memory is Memory 1
 			DMA_Cmd(DMA2_Stream5, ENABLE);
       if(this_time_rx_len == 18){		
-					readRemote(&remote, sbus_rx_buffer);
+					readRemote( sbus_rx_buffer);
 		}
 }  
 }
@@ -326,8 +326,13 @@ void CAN2_RX0_IRQHandler(void)
 			wheelInfo.feedback.Speed[canM.canRx.StdId - 0x201] = canM.canRx.Data[2]*256 +canM.canRx.Data[3];
 		}
 		else if(canM.canRx.StdId == 0x001){
-				can1Recieve = canM1.canRx.Data[0];
-}
+			redlaser.verifed_code = canM.canRx.Data[0];
+			redlaser.flag = canM.canRx.Data[1];
+//			redlaser._1st = canM.canRx.Data[1] & 0x01;
+//			redlaser._2nd = canM.canRx.Data[1] & 0x02;
+//			redlaser._3rd = canM.canRx.Data[1] & 0x04;
+//			redlaser._4th = canM.canRx.Data[1] & 0x08;
+		}
 		
 
    }

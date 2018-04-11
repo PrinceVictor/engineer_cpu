@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\engineer_cpu.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\engineer_cpu.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Thu Apr 05 00:36:17 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Thu Apr 12 00:26:31 2018
 <BR><P>
 <H3>Maximum Stack Usage =        384 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -265,7 +265,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boot
 </UL>
 
-<P><STRONG><a name="[6f]"></a>remoteConfig</STRONG> (Thumb, 266 bytes, Stack size 96 bytes, communication.o(.text))
+<P><STRONG><a name="[6f]"></a>remoteConfig</STRONG> (Thumb, 268 bytes, Stack size 96 bytes, communication.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 164<LI>Call Chain = remoteConfig &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
@@ -286,7 +286,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boot
 </UL>
 
-<P><STRONG><a name="[30]"></a>USART1_IRQHandler</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, communication.o(.text))
+<P><STRONG><a name="[30]"></a>USART1_IRQHandler</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, communication.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART1_IRQHandler &rArr; USART_GetITStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRemote
@@ -322,7 +322,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(RESET)
 </UL>
-<P><STRONG><a name="[4b]"></a>CAN2_RX0_IRQHandler</STRONG> (Thumb, 278 bytes, Stack size 8 bytes, communication.o(.text))
+<P><STRONG><a name="[4b]"></a>CAN2_RX0_IRQHandler</STRONG> (Thumb, 282 bytes, Stack size 8 bytes, communication.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = CAN2_RX0_IRQHandler &rArr; CAN_GetITStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Receive
@@ -335,11 +335,11 @@ Global Symbols
 
 <P><STRONG><a name="[112]"></a>my_max</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, myfunc.o(.text), UNUSED)
 
-<P><STRONG><a name="[c5]"></a>amplitudeLimiting</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, myfunc.o(.text))
+<P><STRONG><a name="[c4]"></a>amplitudeLimiting</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, myfunc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wheelSolute
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pidGet
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lidar_Func
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lidar_Func
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
 </UL>
 
 <P><STRONG><a name="[ce]"></a>Subsection_PID</STRONG> (Thumb, 126 bytes, Stack size 12 bytes, myfunc.o(.text))
@@ -552,7 +552,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bd]"></a>Key_detect</STRONG> (Thumb, 170 bytes, Stack size 8 bytes, controltask.o(.text))
+<P><STRONG><a name="[bf]"></a>Key_detect</STRONG> (Thumb, 1080 bytes, Stack size 8 bytes, controltask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Key_detect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
@@ -562,64 +562,63 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
 </UL>
 
-<P><STRONG><a name="[7c]"></a>runControl</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, controltask.o(.text))
+<P><STRONG><a name="[7c]"></a>runControl</STRONG> (Thumb, 298 bytes, Stack size 16 bytes, controltask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = runControl &rArr; commuiModeChange &rArr; remoteControl &rArr; RampCal &rArr; __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;holder_Init
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commuiModeChange
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Trans
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;allParaInit
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;angle_update
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_detect
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_detect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM8_BRK_TIM12_IRQHandler
 </UL>
 
-<P><STRONG><a name="[c1]"></a>RampCal</STRONG> (Thumb, 150 bytes, Stack size 24 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[c0]"></a>RampCal</STRONG> (Thumb, 150 bytes, Stack size 24 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = RampCal &rArr; __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;computerControl
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;computerControl
 </UL>
 
-<P><STRONG><a name="[c3]"></a>computerControl</STRONG> (Thumb, 496 bytes, Stack size 16 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[c2]"></a>computerControl</STRONG> (Thumb, 496 bytes, Stack size 16 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = computerControl &rArr; RampCal &rArr; __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commuiModeChange
 </UL>
 
-<P><STRONG><a name="[c4]"></a>remoteControl</STRONG> (Thumb, 538 bytes, Stack size 16 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[c3]"></a>remoteControl</STRONG> (Thumb, 542 bytes, Stack size 16 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = remoteControl &rArr; RampCal &rArr; __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commuiModeChange
 </UL>
 
-<P><STRONG><a name="[bb]"></a>commuiModeChange</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[bb]"></a>commuiModeChange</STRONG> (Thumb, 238 bytes, Stack size 16 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = commuiModeChange &rArr; remoteControl &rArr; RampCal &rArr; __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lidar_Func
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;computerControl
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lidar_Func
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;remoteControl
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;computerControl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
 </UL>
 
-<P><STRONG><a name="[93]"></a>readRemote</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[93]"></a>readRemote</STRONG> (Thumb, 162 bytes, Stack size 0 bytes, comunicatetask.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[c7]"></a>transferType</STRONG> (Thumb, 228 bytes, Stack size 16 bytes, comunicatetask.o(.text))
+<P><STRONG><a name="[c6]"></a>transferType</STRONG> (Thumb, 238 bytes, Stack size 16 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = transferType
 </UL>
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
@@ -628,20 +627,16 @@ Global Symbols
 <P><STRONG><a name="[be]"></a>canTrans</STRONG> (Thumb, 68 bytes, Stack size 32 bytes, comunicatetask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = canTrans &rArr; transferType
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_TransmitStatus
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transferType
+<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_TransmitStatus
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;transferType
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
 </UL>
 
-<P><STRONG><a name="[c0]"></a>can1Trans</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, comunicatetask.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = can1Trans &rArr; CAN_TransmitStatus
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_TransmitStatus
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
+<P><STRONG><a name="[c9]"></a>can1Trans</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, comunicatetask.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_TransmitStatus
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 </UL>
 
 <P><STRONG><a name="[ba]"></a>holder_Init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, holder.o(.text))
@@ -667,12 +662,12 @@ Global Symbols
 <P><STRONG><a name="[cd]"></a>wheelSolute</STRONG> (Thumb, 226 bytes, Stack size 16 bytes, chassistask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = wheelSolute
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
 </UL>
 
-<P><STRONG><a name="[bf]"></a>chassisControl</STRONG> (Thumb, 262 bytes, Stack size 16 bytes, chassistask.o(.text))
+<P><STRONG><a name="[bd]"></a>chassisControl</STRONG> (Thumb, 206 bytes, Stack size 16 bytes, chassistask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = chassisControl &rArr; pidGet &rArr; Subsection_PID
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wheelSolute
@@ -681,22 +676,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;runControl
 </UL>
 
-<P><STRONG><a name="[c6]"></a>Lidar_Func</STRONG> (Thumb, 294 bytes, Stack size 32 bytes, chassistask.o(.text))
+<P><STRONG><a name="[c5]"></a>Lidar_Func</STRONG> (Thumb, 294 bytes, Stack size 32 bytes, chassistask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Lidar_Func
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commuiModeChange
 </UL>
 
-<P><STRONG><a name="[cc]"></a>pidGet</STRONG> (Thumb, 494 bytes, Stack size 24 bytes, pidtask.o(.text))
+<P><STRONG><a name="[cc]"></a>pidGet</STRONG> (Thumb, 560 bytes, Stack size 24 bytes, pidtask.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = pidGet &rArr; Subsection_PID
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Subsection_PID
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;amplitudeLimiting
 </UL>
 <BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;holder_Control
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chassisControl
 </UL>
 
 <P><STRONG><a name="[69]"></a>refereeConfig</STRONG> (Thumb, 440 bytes, Stack size 96 bytes, referee.o(.text))
@@ -1169,18 +1164,18 @@ Global Symbols
 
 <P><STRONG><a name="[118]"></a>CAN_TTComModeCmd</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, stm32f4xx_can.o(.text), UNUSED)
 
-<P><STRONG><a name="[c8]"></a>CAN_Transmit</STRONG> (Thumb, 304 bytes, Stack size 8 bytes, stm32f4xx_can.o(.text))
+<P><STRONG><a name="[c7]"></a>CAN_Transmit</STRONG> (Thumb, 304 bytes, Stack size 8 bytes, stm32f4xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Trans
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Trans
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
 </UL>
 
-<P><STRONG><a name="[c9]"></a>CAN_TransmitStatus</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, stm32f4xx_can.o(.text))
+<P><STRONG><a name="[c8]"></a>CAN_TransmitStatus</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, stm32f4xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_TransmitStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Trans
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Trans
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTrans
 </UL>
 
 <P><STRONG><a name="[119]"></a>CAN_CancelTransmit</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_can.o(.text), UNUSED)
@@ -1883,7 +1878,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_x
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_y
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_z
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
@@ -1900,7 +1895,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_x
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_y
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_z
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
@@ -1911,7 +1906,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
@@ -1927,7 +1922,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_x
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_y
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_z
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
@@ -1943,7 +1938,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_x
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_y
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KalmanFilter_z
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
@@ -1955,7 +1950,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readIMU
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 </UL>
 
 <P><STRONG><a name="[b7]"></a>__aeabi_d2iz</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, dfixi.o(.text))
@@ -1964,11 +1959,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readIMU
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 </UL>
 
 <P><STRONG><a name="[aa]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
+<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMUupdate
 </UL>
 
@@ -1977,7 +1972,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
+<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMUupdate
 </UL>
 
@@ -2034,11 +2029,11 @@ Global Symbols
 <P><STRONG><a name="[1c3]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cdcmple.o(.text), UNUSED)
 
 <P><STRONG><a name="[109]"></a>__aeabi_cdcmple</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, cdcmple.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 </UL>
 
 <P><STRONG><a name="[108]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, cdrcmple.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 </UL>
 
 <P><STRONG><a name="[61]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -2065,7 +2060,7 @@ Global Symbols
 <P><STRONG><a name="[101]"></a>__ARM_fpclassify</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, fpclassify.o(i.__ARM_fpclassify))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __ARM_fpclassify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
@@ -2117,7 +2112,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMUupdate
 </UL>
 
-<P><STRONG><a name="[c2]"></a>__hardfp_exp</STRONG> (Thumb, 726 bytes, Stack size 72 bytes, exp.o(i.__hardfp_exp))
+<P><STRONG><a name="[c1]"></a>__hardfp_exp</STRONG> (Thumb, 726 bytes, Stack size 72 bytes, exp.o(i.__hardfp_exp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = __hardfp_exp &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
@@ -2134,7 +2129,7 @@ Global Symbols
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
+<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RampCal
 </UL>
 
 <P><STRONG><a name="[103]"></a>__kernel_poly</STRONG> (Thumb, 248 bytes, Stack size 24 bytes, poly.o(i.__kernel_poly))
@@ -2143,7 +2138,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
@@ -2153,7 +2148,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan
 </UL>
@@ -2165,7 +2160,7 @@ Global Symbols
 <P><STRONG><a name="[1c9]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[100]"></a>__set_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__set_errno))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_exp
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asin
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 </UL>

@@ -44,9 +44,21 @@ typedef struct{
 	uint8_t forward_leg;
 	uint8_t back_leg;
 	uint8_t support_leg;
+	uint8_t up;
+	uint8_t down;
+	uint8_t take_bullet;
 }_relay_flag;
 
-extern _relay_flag relay_flag;
+typedef struct{
+	uint8_t verifed_code;
+	uint8_t flag;
+	uint8_t _1st;
+	uint8_t _2nd;
+	uint8_t _3rd;
+	uint8_t _4th;
+}_laser_sensor;
 
+extern _relay_flag relay_flag;
+extern _laser_sensor redlaser;
 #endif
 

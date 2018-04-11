@@ -2,19 +2,19 @@
 _moveKey key = {0};
 _speed speed = {
 	200,
-	150,
+	180,
 	0,
 	0
 };
-
-_RC_Ctl remote = {0};
 _canMessage canM = {0};
+_RC_Ctl remote = {0};
 _canMessage canM1 = {0};
 uint8_t can1transmit =0;
 uint8_t can1Recieve = 0;
+int fuck;
 
 
-int8_t commuiModeChange(int8_t* flag, _RC_Ctl* data, _chassis* chassis){
+int8_t commuiModeChange(int8_t* flag,const _RC_Ctl* data, _chassis* chassis){
 	static uint8_t key_press_flag = 0;
 	key.clock_cnt ++;
 	switch (data->rc.s1){
@@ -27,49 +27,58 @@ int8_t commuiModeChange(int8_t* flag, _RC_Ctl* data, _chassis* chassis){
 		}
 		case 2:{
 			*flag = 0;
-		switch(data->key.v){
-			case  0:{
-				key_press_flag = 0;
-				break;
-}
-			case key_R:{
-				if(!key_press_flag){
-			if(relay_flag.autolanding)  {
-				relay_flag.autolanding = 0;
-				relay_flag.can1_flag = 0x00;
-}
-			else {
-				relay_flag.autolanding = 1;
-				relay_flag.can1_flag = 0x01;
-			}
-				key_press_flag = 1;
-		}
-			break;
-}
-		case key_Ctrl|key_R :{	
-			if(!key_press_flag){
-			if(relay_flag.manuallanding) {
-				relay_flag.manuallanding =0;
-				relay_flag.can1_flag = 0;
-			}
-			else {
-				if(relay_flag.autolanding){
-					relay_flag.autolanding = 0;
-					relay_flag.manuallanding = 1;
-					}
-				else{
-					relay_flag.manuallanding = 1;
-					relay_flag.can1_flag = 0x01;
-					}				
-					
-			}
-			key_press_flag = 1;
-		}
-			break;
-}
-}
 			computerControl(data , chassis);
+			
+			switch(data->key.v){
+				case  0:{
+					key_press_flag = 0;
+					break;
+		}
+				case key_R:{
+					if(!key_press_flag){
+						if(relay_flag.autolanding)  {
+							relay_flag.autolanding = 0;
+							relay_flag.can1_flag = 0x00;
+								}
+					else{
+						relay_flag.autolanding = 1;
+						relay_flag.can1_flag = 0x01;
+						relay_flag.up = 1;
+					}
+						key_press_flag = 1;
+					return 3;
+			}
+				break;
+		}
+			case key_Ctrl|key_R :{			
+				if(!key_press_flag){
+				if(relay_flag.manuallanding) {
+					relay_flag.manuallanding =0;
+					relay_flag.can1_flag = 0;
+				}
+				else {
+					if(relay_flag.autolanding){
+						relay_flag.autolanding = 0;
+						relay_flag.manuallanding = 1;
+						}
+					else{
+						relay_flag.manuallanding = 1;
+						relay_flag.can1_flag = 0x01;
+						}				
+						
+				}
+				key_press_flag = 1;
+				return 4;
+			}
+				break;
+		}
+			default:{
+				key_press_flag = 0;
+				return 2;
+		}
+}
 			return 2;
+			break;
 		}
 		case 1:{
 			*flag = 1;
@@ -81,20 +90,20 @@ int8_t commuiModeChange(int8_t* flag, _RC_Ctl* data, _chassis* chassis){
 		
 }
 
-int8_t readRemote(_RC_Ctl* data, unsigned char * buffer){
+int8_t readRemote( unsigned char * buffer){
 
-	data->rc.ch0 = (buffer[0]| (buffer[1] << 8)) & 0x07ff; //!< Channel 0
-	data->rc.ch1 = ((buffer[1] >> 3) | (buffer[2] << 5)) & 0x07ff; //!< Channel 1
-	data->rc.ch2 = ((buffer[2] >> 6) | (buffer[3] << 2) |(buffer[4] << 10)) & 0x07ff; //!< Channel 2
-	data->rc.ch3 = ((buffer[4] >> 1) | (buffer[5] << 7)) & 0x07ff; //!< Channel 3
-	data->rc.s1 = ((buffer[5] >> 4)& 0x000C) >> 2; //!< Switch left
-	data->rc.s2 = ((buffer[5] >> 4)& 0x0003); //!< Switch right
-	data->mouse.x = -(buffer[6] | (buffer[7] << 8)); //!< Mouse X axis
-	data->mouse.y = buffer[8] | (buffer[9] << 8); //!< Mouse Y axis
-	data->mouse.z = buffer[10] | (buffer[11] << 8); //!< Mouse Z axis
-	data->mouse.press_l = buffer[12]; //!< Mouse Left Is Press 
-	data->mouse.press_r = buffer[13]; //!< Mouse Right Is Press 
-	data->key.v = buffer[14] | (buffer[15] << 8); //!< KeyBoard value
+	remote.rc.ch0 = (buffer[0]| (buffer[1] << 8)) & 0x07ff; //!< Channel 0
+	remote.rc.ch1 = ((buffer[1] >> 3) | (buffer[2] << 5)) & 0x07ff; //!< Channel 1
+	remote.rc.ch2 = ((buffer[2] >> 6) | (buffer[3] << 2) |(buffer[4] << 10)) & 0x07ff; //!< Channel 2
+	remote.rc.ch3 = ((buffer[4] >> 1) | (buffer[5] << 7)) & 0x07ff; //!< Channel 3
+	remote.rc.s1 = ((buffer[5] >> 4)& 0x000C) >> 2; //!< Switch left
+	remote.rc.s2 = ((buffer[5] >> 4)& 0x0003); //!< Switch right
+	remote.mouse.x = -(buffer[6] | (buffer[7] << 8)); //!< Mouse X axis
+	remote.mouse.y = buffer[8] | (buffer[9] << 8); //!< Mouse Y axis
+	remote.mouse.z = buffer[10] | (buffer[11] << 8); //!< Mouse Z axis
+	remote.mouse.press_l = buffer[12]; //!< Mouse Left Is Press 
+	remote.mouse.press_r = buffer[13]; //!< Mouse Right Is Press 
+	remote.key.v = buffer[14] | (buffer[15] << 8); //!< KeyBoard value
 	return 1;
 }
 
@@ -110,7 +119,7 @@ float RampCal(_RampTime *RampT)
 	return RampT->out;
 }
 
-int8_t remoteControl(_RC_Ctl* data, _chassis* chassis){
+int8_t remoteControl(const _RC_Ctl* data, _chassis* chassis){
 	static int count = 0;
 	
 	if(abs( data->rc.ch1-1024)> 100){
@@ -144,10 +153,9 @@ int8_t remoteControl(_RC_Ctl* data, _chassis* chassis){
 	
 	chassis->Fb = speed.Fb;
 	chassis->Lr = speed.Lr;
-	if(abs( 1024 - data->rc.ch2 )< 50)  data->rc.ch2 = 1024;
-	chassis->yaw.temp = \
-		( 1024 - data->rc.ch2 ) * 0.0005f;//测试视觉时，注释此举
-	chassis->yaw.temp = amplitudeLimiting(1 , chassis->yaw.temp , 0.25f);
+	if(abs( 1024 - data->rc.ch2 )< 50)  chassis->yaw.temp = 0;
+	else chassis->yaw.temp = ( 1024 - data->rc.ch2 ) * 0.0004f;//测试视觉时，注释此举
+	chassis->yaw.temp = amplitudeLimiting(1 , chassis->yaw.temp , 0.20f);
 	
 	chassis->yaw.target = chassis->yaw.target + chassis->yaw.temp ;
 	
@@ -161,7 +169,7 @@ int8_t remoteControl(_RC_Ctl* data, _chassis* chassis){
 }
 
 
-int8_t computerControl(_RC_Ctl* data, _chassis* chassis){
+int8_t computerControl(const _RC_Ctl* data, _chassis* chassis){
 
 	if(data->key.v & 0x01)//  w
 	{
@@ -276,8 +284,10 @@ void transferType(int8_t mode, _canMessage* message, int16_t* data){
 			message->canTx.StdId = 0x006;
 			message->canTx.IDE=CAN_ID_STD;					
 			message->canTx.RTR=CAN_RTR_DATA;				 
-			message->canTx.DLC=8;		
-			message->canTx.Data[0] = (uint8_t)(*data);
+			message->canTx.DLC=8;
+			message->canTx.Data[0] = (uint8_t) 0xab;			
+			message->canTx.Data[1] = (uint8_t)(*data);
+			message->canTx.Data[2] = (uint8_t)(*data >> 8);		
 //			for(i=0; i<2; i++){
 //				message->canTx.Data[0+i*2] = (uint8_t)(*(data+i) >> 8);
 //				message->canTx.Data[1+i*2] = (uint8_t)(*(data+i));

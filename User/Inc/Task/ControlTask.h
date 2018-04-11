@@ -11,7 +11,8 @@
 
 #define init 1
 #define run	 2
-#define landing 3
+#define auto_landing 3
+#define manual_landing 4
 #define stop 0
 #define reset -1
 

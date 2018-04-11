@@ -8,7 +8,7 @@
 #include "math.h"
 #include "Referee.h"
 #include "Relay.h"
-#define YAW_SENSITY 0.050f		//鼠标yaw轴灵敏度
+#define YAW_SENSITY 0.005f		//鼠标yaw轴灵敏度
 #define PITCH_SENSITY 0.03f	//鼠标pitch轴灵敏度
 
 #define LEFT_LIMINT_ANGLE 40.0f //角度限制
@@ -78,11 +78,11 @@ extern _canMessage canM1;
 extern uint8_t can1transmit;
 extern uint8_t can1Recieve;
 
-int8_t readRemote(_RC_Ctl*, unsigned char* );
-int8_t commuiModeChange(int8_t* , _RC_Ctl* , _chassis* );
-int8_t computerControl(_RC_Ctl*,_chassis*);
-int8_t remoteControl(_RC_Ctl* , _chassis*);
-int8_t remoteImitate(_RC_Ctl*,_chassis*);
+int8_t readRemote( unsigned char* );
+int8_t commuiModeChange(int8_t* ,const _RC_Ctl* , _chassis* );
+int8_t computerControl(const _RC_Ctl*,_chassis*);
+int8_t remoteControl(const _RC_Ctl* , _chassis*);
+
 int8_t can1Trans(uint8_t);
 extern _RC_Ctl remote;
 extern _moveKey key;

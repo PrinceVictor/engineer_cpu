@@ -10,8 +10,8 @@ int const postion[8][2] = {
 	{25,360+ 310*4},{25,360+ 310*3},{25,360+ 310*2},{25,360+ 310*1},{25,360+ 310*0},{275+130,25},{275+130*1,25},{275+130*2,25}
 };
 _pid_Para wheelpid = {
-	55,	// kp
-	0.75f,	// ki	
+	25,	// kp
+	0.50f,	// ki	
 	0,	// kd
 	1,	// i flag
 	0,	// d flag
@@ -21,20 +21,20 @@ _pid_Para wheelpid = {
 };
 
 _pid_Para chassispid_core = {
-	13.5f,	// kp
+	7.0f,	// kp
 	0,	// ki
-	1.0f,	// kd
+	2.0f,	// kd
 	0,	// i flag
 	0,	// d flag
 	0,	// i limit
-	400,	// out limit
+	360,	// out limit
 	4	//mode flag,  0 for disable
 };
 
 _pid_Para chassispid_shell = {
-	8.5f, //180,	// kp 6.5
-	0.5f,	// ki
-	0.5f,	// kd
+	13.0f, //180,	// kp 6.5
+	0.0f,	// ki
+	1.0f,	// kd
 	0,	// i flag
 	0,	// d flag
 	0,	// i limit
@@ -45,9 +45,9 @@ _pid_Para chassispid_shell = {
 int8_t allParaInit(void)
 {
 	wheelInfo.kpid = wheelpid;
-	wheelInfo.K_speed = 1.0f;
-	wheelInfo.speedLimit = 400;
-	chassisPara.x = 2.0f;
+	wheelInfo.K_speed = 19.0f;
+	wheelInfo.speedLimit = 7000;
+	chassisPara.x = 1.8f;
 	chassisPara.y = 1.2f;
 	chassisPara.pid.shell.k_para = chassispid_shell;
 	chassisPara.pid.core.k_para = chassispid_core;
@@ -82,11 +82,12 @@ int8_t chassisControl(uint8_t flag)
 														chassisPara.yaw.angle_speed);
 		
 		chassisPara.yaw.last_target = chassisPara.yaw.target;
-		Send_data[0] = (float)chassisPara.yaw.angle ; 
-		Send_data[1] = (float)chassisPara.yaw.target;
+		
+//		Send_data[0] = (float)chassisPara.yaw.angle ; 
+//		Send_data[1] = (float)chassisPara.yaw.target;
 
-		Send_data[2] = (float)chassisPara.pid.core.pid.feedback; 
-		Send_data[3] = (float)chassisPara.pid.shell.pid.Out;
+//		Send_data[2] = (float)chassisPara.pid.core.pid.feedback; 
+//		Send_data[3] = (float)chassisPara.pid.shell.pid.Out;
 		
 //		Send_data[4] = (float)chassisPara.pid.core.pid.Out;
 		
@@ -99,7 +100,7 @@ int8_t chassisControl(uint8_t flag)
 			wheelInfo.out[i] = pidGet(&wheelInfo.kpid,
 																&wheelInfo.pid[i],
 																wheelInfo.targetSpeed[i],
-																(float)(wheelInfo.feedback.Speed[i]/19.0f));
+																(float)(wheelInfo.feedback.Speed[i]));
 		}		
 		Send_data[4] = (float)wheelInfo.pid[0].feedback;
 	return 1;

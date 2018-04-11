@@ -21,7 +21,10 @@ int16_t pidGet(_pid_Para* pidPara,
 		case 1:  break;
 		case 2:  break;
 		case 3: {
-			if((abs(pidOut->error) < 50) && (pidOut->target != 0)) pidPara ->i_flag = 1;
+			if(pidOut->target == 0){
+				if(abs(pidOut->error)<40.0f) pidOut->error = 0;
+			}
+			if((abs(pidOut->error) < 800) && (pidOut->target != 0)) pidPara ->i_flag = 1;
 			else {
 				pidPara ->i_flag = 0;
 				pidOut -> i_interval = 0;

@@ -2,6 +2,7 @@
 
 _relay relay ={0};
 _relay_flag relay_flag ={0};
+_laser_sensor redlaser = {0}; 
 /*
 void scan_relayflag(_relay* relay_flag, _RC_Ctl* remote){
 	
