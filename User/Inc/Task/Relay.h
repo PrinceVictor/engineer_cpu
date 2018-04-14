@@ -3,6 +3,9 @@
 
 #include "MyFunc.h"
 #include "ComunicateTask.h"
+#include "ChassisTask.h"
+#include "PidTask.h"
+#include "ControlTask.h"
 
 #define key_A   0x0004
 #define	key_W   0x0001
@@ -60,5 +63,8 @@ typedef struct{
 
 extern _relay_flag relay_flag;
 extern _laser_sensor redlaser;
+
+extern int16_t* Key_detect(const _RC_Ctl);
+extern int8_t auto_move(float );
 #endif
 

@@ -209,50 +209,49 @@ void New_Send_Data(uint8_t *data,uint16_t size)
   DMA_Cmd(DMA1_Stream6,ENABLE); 
 }
 
-void send_odm_msg(float * data)
+void send_odm_msg1(float * data)
 { 
 	int i=0;
 	//PID_out;
-  uint8_t uart3_send_buff[32]; 
+  uint8_t uart2_send_buff[32]; 
 	uint8_t sum=0;
-	uart3_send_buff[0] = 0xAA;
-	uart3_send_buff[1] = 0xAA;
-	uart3_send_buff[2] = 0xF1;
-	uart3_send_buff[3] = 20;
-	for(i=0;i<5;i++) 
+	uart2_send_buff[0] = 0xAA;
+	uart2_send_buff[1] = 0xAA;
+	uart2_send_buff[2] = 0xF1;
+	uart2_send_buff[3] = 24;
+	for(i=0;i<6;i++) 
 	{
-		uart3_send_buff[i*4+0+4] = BYTE3(*(data+i));
-		uart3_send_buff[i*4+1+4] = BYTE2(*(data+i));
-		uart3_send_buff[i*4+2+4] = BYTE1(*(data+i));
-		uart3_send_buff[i*4+3+4] = BYTE0(*(data+i));
+		uart2_send_buff[i*4+0+4] = BYTE3(*(data+i));
+		uart2_send_buff[i*4+1+4] = BYTE2(*(data+i));
+		uart2_send_buff[i*4+2+4] = BYTE1(*(data+i));
+		uart2_send_buff[i*4+3+4] = BYTE0(*(data+i));
 	}
-	for(i = 0; i<24; i++)
+	for(i = 0; i<28; i++)
 		{
-			sum +=uart3_send_buff[i];
+			sum +=uart2_send_buff[i];
 		}
-		uart3_send_buff[24] = sum;	
+		uart2_send_buff[28] = sum;	
 
-    New_Send_Data(uart3_send_buff,25);
-		
+    New_Send_Data(uart2_send_buff,29);
 }
 
 void send_check(uint16_t data)
 {
-  uint8_t uart3_send_buff[32]; 
+  uint8_t uart2_send_buff[32]; 
 	uint16_t sum=0,i;
-	uart3_send_buff[0] = 0xAA;
-	uart3_send_buff[1] = 0xAA;
-	uart3_send_buff[2] = 0xEF;
-	uart3_send_buff[3] = 2;
-  uart3_send_buff[4] = 0x10;
-  uart3_send_buff[5] = data;
+	uart2_send_buff[0] = 0xAA;
+	uart2_send_buff[1] = 0xAA;
+	uart2_send_buff[2] = 0xEF;
+	uart2_send_buff[3] = 2;
+  uart2_send_buff[4] = 0x10;
+  uart2_send_buff[5] = data;
   
   for(i=0;i<6;i++)
   {
-    sum+=uart3_send_buff[i];
+    sum+=uart2_send_buff[i];
   }
-  uart3_send_buff[6] = sum;
-  New_Send_Data(uart3_send_buff,7);
+  uart2_send_buff[6] = sum;
+  New_Send_Data(uart2_send_buff,7);
 }
 
 int dara = 0,time_count = 0;

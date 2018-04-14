@@ -21,10 +21,11 @@ int16_t pidGet(_pid_Para* pidPara,
 		case 1:  break;
 		case 2:  break;
 		case 3: {
+			pidOut->error = pidOut->error * 0.5f;
 			if(pidOut->target == 0){
-				if(abs(pidOut->error)<40.0f) pidOut->error = 0;
+				if(abs(pidOut->error)<20.0f) pidOut->error = 0;
 			}
-			if((abs(pidOut->error) < 800) && (pidOut->target != 0)) pidPara ->i_flag = 1;
+			if((abs(pidOut->error) < 400) && (pidOut->target != 0)) pidPara ->i_flag = 1;
 			else {
 				pidPara ->i_flag = 0;
 				pidOut -> i_interval = 0;
@@ -35,6 +36,9 @@ int16_t pidGet(_pid_Para* pidPara,
 		case 4:  
 		{
 			pidOut->error = pidOut->error * 0.1f;
+			if(abs(pidOut->target)<10.0f && abs(pidOut->error)<0.5f  && !chassisPara.yaw.target_changeMode ) {
+				pidOut->error = 0;
+			}
 //			if((abs(pidOut->error) > 30 ) && chassisPara.yaw.target_changeMode) pidPara ->i_flag = 1;
 //			else {
 //				pidPara ->i_flag = 0;

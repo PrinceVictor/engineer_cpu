@@ -1,4 +1,7 @@
 #include "ComunicateTask.h"
+#include "Relay.h"
+#include "ControlTask.h"
+
 _moveKey key = {0};
 _speed speed = {
 	200,
@@ -11,84 +14,6 @@ _RC_Ctl remote = {0};
 _canMessage canM1 = {0};
 uint8_t can1transmit =0;
 uint8_t can1Recieve = 0;
-int fuck;
-
-
-int8_t commuiModeChange(int8_t* flag,const _RC_Ctl* data, _chassis* chassis){
-	static uint8_t key_press_flag = 0;
-	key.clock_cnt ++;
-	switch (data->rc.s1){
-		case 3:{
-			*flag = 1;
-			relay_flag.can1_flag = 0;
-			remoteControl(data , chassis);
-			Lidar_Func(data->rc.s2,&lidar,0);
-			return 2;
-		}
-		case 2:{
-			*flag = 0;
-			computerControl(data , chassis);
-			
-			switch(data->key.v){
-				case  0:{
-					key_press_flag = 0;
-					break;
-		}
-				case key_R:{
-					if(!key_press_flag){
-						if(relay_flag.autolanding)  {
-							relay_flag.autolanding = 0;
-							relay_flag.can1_flag = 0x00;
-								}
-					else{
-						relay_flag.autolanding = 1;
-						relay_flag.can1_flag = 0x01;
-						relay_flag.up = 1;
-					}
-						key_press_flag = 1;
-					return 3;
-			}
-				break;
-		}
-			case key_Ctrl|key_R :{			
-				if(!key_press_flag){
-				if(relay_flag.manuallanding) {
-					relay_flag.manuallanding =0;
-					relay_flag.can1_flag = 0;
-				}
-				else {
-					if(relay_flag.autolanding){
-						relay_flag.autolanding = 0;
-						relay_flag.manuallanding = 1;
-						}
-					else{
-						relay_flag.manuallanding = 1;
-						relay_flag.can1_flag = 0x01;
-						}				
-						
-				}
-				key_press_flag = 1;
-				return 4;
-			}
-				break;
-		}
-			default:{
-				key_press_flag = 0;
-				return 2;
-		}
-}
-			return 2;
-			break;
-		}
-		case 1:{
-			*flag = 1;
-			relay_flag.can1_flag = 0;
-			return 0;
-		}
-		default: return 2;
-}
-		
-}
 
 int8_t readRemote( unsigned char * buffer){
 
@@ -105,6 +30,33 @@ int8_t readRemote( unsigned char * buffer){
 	remote.mouse.press_r = buffer[13]; //!< Mouse Right Is Press 
 	remote.key.v = buffer[14] | (buffer[15] << 8); //!< KeyBoard value
 	return 1;
+}
+
+int8_t commuiModeChange(int8_t* flag,const _RC_Ctl* data, _chassis* chassis){
+	
+	key.clock_cnt ++;
+	switch (data->rc.s1){
+		case 3:{
+			*flag = 1;
+			relay_flag.can1_flag = 0;
+			remoteControl(data , chassis);
+	//		Lidar_Func(relay_flag.take_bullet,&lidar,0);
+			return 2;
+		}
+		case 2:{
+			*flag = 0;
+			computerControl(data , chassis);
+			return Auto_mode(&remote);
+			return 2;
+		}
+		case 1:{
+			*flag = 1;
+			return Auto_mode(&remote);
+			return 0;
+		}
+		default: return 2;
+}
+		
 }
 
 float RampCal(_RampTime *RampT)
@@ -288,10 +240,7 @@ void transferType(int8_t mode, _canMessage* message, int16_t* data){
 			message->canTx.Data[0] = (uint8_t) 0xab;			
 			message->canTx.Data[1] = (uint8_t)(*data);
 			message->canTx.Data[2] = (uint8_t)(*data >> 8);		
-//			for(i=0; i<2; i++){
-//				message->canTx.Data[0+i*2] = (uint8_t)(*(data+i) >> 8);
-//				message->canTx.Data[1+i*2] = (uint8_t)(*(data+i));
-//			}
+
 			break;}
 		default:  break;}	
 }

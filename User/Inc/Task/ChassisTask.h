@@ -26,6 +26,17 @@ typedef struct{
 }_chassis;
 
 typedef struct{
+	float target_vx;
+	float target_vy;
+	float x;
+	float y;
+	float Vx;
+	float Vy;
+	float Wz;
+	float theta;
+}_wheel_solve;
+
+typedef struct{
 	int16_t Speed[4];
 	int16_t Postion[4];
 }_feedback;
@@ -37,7 +48,7 @@ typedef struct wheelPara{
 	uint8_t	pid_flag;
 	float speedLimit;
 	float K_speed;
-	float speed[4];
+	_wheel_solve info;
 	float targetSpeed[4];
 	float direction[4];
 	int16_t out[4];

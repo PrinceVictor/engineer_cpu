@@ -6,5 +6,6 @@
 #include "Imu.h"
 #include "Boot.h"
 #include "Referee.h"
-extern float Send_data[5];
+extern float Send_data1[6];
+extern float Send_data2[4];
 #endif 

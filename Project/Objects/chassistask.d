@@ -45,8 +45,6 @@
 .\objects\chassistask.o: ..\User\Inc\Referee\Referee.h
 .\objects\chassistask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\chassistask.o: ..\User\Inc\Task\ComunicateTask.h
-.\objects\chassistask.o: ..\User\Inc\Task\Relay.h
-.\objects\chassistask.o: ..\User\Inc\Task\ComunicateTask.h
 .\objects\chassistask.o: ..\User\Inc\main.h
 .\objects\chassistask.o: ..\User\Inc\IMU\Imu.h
 .\objects\chassistask.o: ..\User\Inc\BSP\Clock.h
@@ -54,5 +52,7 @@
 .\objects\chassistask.o: ..\User\Inc\Task\Holder.h
 .\objects\chassistask.o: ..\User\Inc\IMU\6050.h
 .\objects\chassistask.o: ..\User\Inc\IMU\I2C.h
+.\objects\chassistask.o: ..\User\Inc\Task\Relay.h
+.\objects\chassistask.o: ..\User\Inc\Task\ControlTask.h
 .\objects\chassistask.o: ..\User\Inc\BSP\Boot.h
 .\objects\chassistask.o: ..\User\Inc\BSP\Communication.h

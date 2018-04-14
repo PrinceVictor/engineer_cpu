@@ -7,7 +7,9 @@
 #include "stm32f4xx_can.h"
 #include "math.h"
 #include "Referee.h"
-#include "Relay.h"
+
+
+
 #define YAW_SENSITY 0.005f		// Û±Íyaw÷·¡È√Ù∂»
 #define PITCH_SENSITY 0.03f	// Û±Ípitch÷·¡È√Ù∂»
 
@@ -72,11 +74,7 @@ int8_t canTrans(uint8_t, int8_t , _canMessage* , int16_t* );
 void transferType(int8_t , _canMessage* , int16_t* );
 
 extern _canMessage canM;
-
-extern _canMessage canM;
 extern _canMessage canM1;
-extern uint8_t can1transmit;
-extern uint8_t can1Recieve;
 
 int8_t readRemote( unsigned char* );
 int8_t commuiModeChange(int8_t* ,const _RC_Ctl* , _chassis* );

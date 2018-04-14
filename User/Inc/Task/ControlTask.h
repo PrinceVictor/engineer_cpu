@@ -22,10 +22,13 @@ typedef struct{
 	int8_t remoteOrkeyboard;  // 1 for remote, 0 for keyboard and mouse
 }_sysState;
 
-
-extern int16_t* Key_detect(const _RC_Ctl*);
 extern _sysState sys;
 extern int8_t runControl(_sysState*);
 void angle_update(void);
+void angle_clear(void);
+
+int8_t Auto_mode(const _RC_Ctl*);
+void send_odm_msg2(_wheel_solve *);
+
 #endif 
 

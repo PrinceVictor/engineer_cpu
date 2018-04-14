@@ -4,7 +4,7 @@
 #include "MyFunc.h"
 #include "string.h"
 
-#define TX_LEN 25
+#define TX_LEN 29
 
 #define BYTE0(dwTemp)       (*(char *)(&dwTemp))
 #define BYTE1(dwTemp)       (*((char *)(&dwTemp) + 1))
@@ -90,7 +90,8 @@ extern _JUDGMENT_01_DATA Judgment_01_data;
 extern _JUDGMENT_02_DATA Judgment_02_data;
 extern _JUDGMENT_03_DATA Judgment_03_data;
 extern _lidar_message lidar;
-void send_odm_msg(float *);
+
+void send_odm_msg1(float *);
 
 extern uint8_t Tx_Buf[TX_LEN];
 extern uint8_t re_data[TX_LEN]; 

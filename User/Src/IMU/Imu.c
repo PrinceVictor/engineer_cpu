@@ -7,7 +7,7 @@ _angle angle;
 volatile uint32_t lastUpdate, now; // 采样周期计数 单位 us
 float q0 = 1, q1 = 0, q2 = 0, q3 = 0;    // quaternion elements representing the estimated orientation
 float exInt = 0, eyInt = 0, ezInt = 0;    // scaled integral error
-float Q = 0.05f, R = 1.5f;
+float Q = 0.02f , R = 6.00f;
 static double KalmanFilter_x(const double ,double ,double );
 static double KalmanFilter_y(const double ,double ,double );
 static double KalmanFilter_z(const double ,double ,double );

@@ -286,7 +286,7 @@ void CAN1_RX0_IRQHandler(void)
 		CAN_ClearITPendingBit(CAN1, CAN_FIFO0);
 		CAN_Receive(CAN1,CAN_FIFO0,&canM1.canRx);
 		if(canM1.canRx.StdId == 0x01){
-				can1Recieve = canM1.canRx.Data[0];
+//				can1Recieve = canM1.canRx.Data[0];
 }
 	}		 
 	
