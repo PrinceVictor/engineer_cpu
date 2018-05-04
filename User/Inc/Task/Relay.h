@@ -50,6 +50,8 @@ typedef struct{
 	uint8_t up;
 	uint8_t down;
 	uint8_t take_bullet;
+	uint8_t rescue;
+	uint8_t status_flag;
 }_relay_flag;
 
 typedef struct{
@@ -64,7 +66,7 @@ typedef struct{
 extern _relay_flag relay_flag;
 extern _laser_sensor redlaser;
 
-extern int16_t* Key_detect(const _RC_Ctl);
-extern int8_t auto_move(float );
+extern int16_t* Key_detect();
+extern int8_t auto_move(float, uint8_t, uint8_t, _lidar_message* lidar1);
 #endif
 

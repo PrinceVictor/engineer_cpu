@@ -76,12 +76,13 @@ void transferType(int8_t , _canMessage* , int16_t* );
 extern _canMessage canM;
 extern _canMessage canM1;
 
-int8_t readRemote( unsigned char* );
-int8_t commuiModeChange(int8_t* ,const _RC_Ctl* , _chassis* );
+int8_t readRemote(unsigned char* );
+int8_t commuiModeChange(const _RC_Ctl* , _chassis* );
 int8_t computerControl(const _RC_Ctl*,_chassis*);
 int8_t remoteControl(const _RC_Ctl* , _chassis*);
 
 int8_t can1Trans(uint8_t);
+
 extern _RC_Ctl remote;
 extern _moveKey key;
 extern _speed speed;

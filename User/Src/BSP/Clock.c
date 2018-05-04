@@ -44,7 +44,8 @@ void TIM8_BRK_TIM12_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM12,TIM_IT_Update);
     TIM_ClearFlag(TIM12, TIM_FLAG_Update);
 		
-		runControl(&sys);
+		runControl();
+		
 		clock_count++;
 }
 }

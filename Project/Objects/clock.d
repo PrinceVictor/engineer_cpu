@@ -47,8 +47,13 @@
 .\objects\clock.o: ..\User\Inc\Referee\Referee.h
 .\objects\clock.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\clock.o: ..\User\Inc\Task\ControlTask.h
+.\objects\clock.o: ..\User\Inc\BSP\Communication.h
+.\objects\clock.o: ..\User\Inc\Task\ControlTask.h
 .\objects\clock.o: ..\User\Inc\Task\Holder.h
 .\objects\clock.o: ..\User\Inc\IMU\6050.h
 .\objects\clock.o: ..\User\Inc\IMU\I2C.h
 .\objects\clock.o: ..\User\Inc\Task\Relay.h
-.\objects\clock.o: ..\User\Inc\Task\ControlTask.h
+.\objects\clock.o: ..\User\Inc\main.h
+.\objects\clock.o: ..\User\Inc\IMU\Imu.h
+.\objects\clock.o: ..\User\Inc\BSP\Clock.h
+.\objects\clock.o: ..\User\Inc\BSP\Boot.h

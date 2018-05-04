@@ -46,8 +46,13 @@
 .\objects\controltask.o: ..\User\Inc\Referee\Referee.h
 .\objects\controltask.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\controltask.o: ..\User\Inc\Task\ComunicateTask.h
+.\objects\controltask.o: ..\User\Inc\BSP\Communication.h
+.\objects\controltask.o: ..\User\Inc\Task\ControlTask.h
 .\objects\controltask.o: ..\User\Inc\Task\Holder.h
 .\objects\controltask.o: ..\User\Inc\IMU\6050.h
 .\objects\controltask.o: ..\User\Inc\IMU\I2C.h
 .\objects\controltask.o: ..\User\Inc\Task\Relay.h
-.\objects\controltask.o: ..\User\Inc\Task\ControlTask.h
+.\objects\controltask.o: ..\User\Inc\main.h
+.\objects\controltask.o: ..\User\Inc\IMU\Imu.h
+.\objects\controltask.o: ..\User\Inc\BSP\Clock.h
+.\objects\controltask.o: ..\User\Inc\BSP\Boot.h

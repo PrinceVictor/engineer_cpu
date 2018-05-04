@@ -17,3 +17,18 @@
 -> up 1									   normal
 -> mid 3								   normal
 -> down 2		computer control		   normal
+
+
+// -April 16th
+						l=560mm
+				 _____________________
+				|                     |
+				|					  |
+				|					  |
+				|					  |
+	L=454mm		|					  |
+				|					  |
+				|					  |
+				|					  |
+				|					  |
+				|_____________________|

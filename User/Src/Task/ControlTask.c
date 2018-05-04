@@ -1,6 +1,6 @@
 #include "ControlTask.h"
 #define pi 3.1415926f
-_sysState sys = {1};
+_sysState sys1 = {1};
 
 int16_t output[4] = {
 	100, 100, 100, 100
@@ -9,51 +9,51 @@ int16_t output[4] = {
 int flag = 0;
 
 float target;
-int8_t runControl(_sysState* sys){
+int8_t runControl(){
 	
-	switch(sys->state){
+	switch(sys1.state){
 		case init:{
 			if(allParaInit())
 			{
 				holder_Init();
-				sys->state = run;
+				sys1.state = run;
 				flag = 1;
 			}
 			break;
 		}
 		case run:{
-			sys->state = commuiModeChange(&sys->remoteOrkeyboard,
-															&remote, 
-															&chassisPara);
+			sys1.state = commuiModeChange(&remote, 
+																		&chassisPara);
 			angle_update();
+			
 //			auto_move(target);
 //			mode 1 to transferType,  mode 2 to read speed, 3 to read position
-//			chassisControl(1);		
-			canTrans(chassisControl(1), 1, &canM, wheelInfo.out);
+//			chassisControl(1);	
+			//send_odm_msg2(&wheelInfo.info);			
+			canTrans(chassisControl(0), 1, &canM, wheelInfo.out);
+			
 //			canTrans(holder_Control(0), 2, &canM, motor.out);
 //			can1Trans(1);
 			break;
 		}
 		case stop:{
-			sys->state = commuiModeChange(&sys->remoteOrkeyboard,
-															&remote, 
-															&chassisPara);
+			sys1.state = commuiModeChange(&remote, 
+																		&chassisPara);
 			canTrans(flag, 0, &canM, wheelInfo.out);
 			break;
 		}
 		case auto_landing:{
-			commuiModeChange(&sys->remoteOrkeyboard,
-															&remote, 
-															&chassisPara);
+			commuiModeChange(&remote, 
+											 &chassisPara);
+			                                                                   //relay_flag.autolanding = 0;
 			if(!relay_flag.autolanding){
-				canTrans(1, 3, &canM, Key_detect(remote));
+				canTrans(1, 3, &canM, Key_detect());
 				angle_clear();
-				sys->state = 2;
+				sys1.state = 2;
 			}
 			angle_update();
-			
-			canTrans(1, 3, &canM, Key_detect(remote));
-//			canTrans(chassisControl(1), 1, &canM, wheelInfo.out);
+			canTrans(1, 3, &canM, Key_detect());
+			canTrans(chassisControl(0), 1, &canM, wheelInfo.out);
 			
 //			canTrans(chassisControl(1), 1, &canM, wheelInfo.out);
 //			can1Trans(1);
@@ -61,18 +61,18 @@ int8_t runControl(_sysState* sys){
 		}
 		case manual_landing:{
 
-			commuiModeChange(&sys->remoteOrkeyboard,
-														&remote, 
-														&chassisPara);
+			commuiModeChange(&remote, 
+											 &chassisPara);
 			
 			if(!relay_flag.manuallanding){
-				canTrans(1, 3, &canM, Key_detect(remote));
-				sys->state = 2;
-}
+				canTrans(1, 3, &canM, Key_detect());
+				sys1.state = 2;
+				angle_clear();
+			}
 			else{
 			angle_update();
-			canTrans(1, 3, &canM, Key_detect(remote));
-			canTrans(chassisControl(1), 1, &canM, wheelInfo.out);
+			canTrans(1, 3, &canM, Key_detect());
+			canTrans(chassisControl(0), 1, &canM, wheelInfo.out);
 			}
 			break;
 		}
@@ -119,6 +119,13 @@ void angle_clear(void){
 	wheelInfo.info.theta = 0;	
 }
 
+void angle_clear2(void){
+	wheelInfo.info.x = 0;
+	wheelInfo.info.y = 0;
+	wheelInfo.info.theta = 0;	
+}
+
+
 int8_t Auto_mode(const _RC_Ctl* data){
 
 	static uint8_t key_press_flag = 0;
@@ -137,25 +144,43 @@ int8_t Auto_mode(const _RC_Ctl* data){
 			stick_press_flag = 0;
 			return 3;
 		}
-		else if(data->rc.s2 == 2){
-			relay_flag.autolanding = 0;
-			relay_flag.can1_flag = 0x00;
-			stick_press_flag = 0;
+		else if(data->rc.s2 == 2 && !stick_press_flag){
+			relay_flag.autolanding = 1;
+			relay_flag.can1_flag = 0x17;
+			relay_flag.down = 1;
+			stick_press_flag = 1;
 			return 2;
 		}
 		else{
 			return 3;
 		}
 	}
-	
-	switch(data->key.v){
-				case  0:{
-					key_press_flag = 0;
-					return 2;
-					break;
+	else if(data->rc.s1 == 2){
+		if(!data->key.v){
+			key_press_flag = 0;
+			return 2;
 		}
-				case key_R:{
-					if(!key_press_flag){
+		else if(data->key.v == key_R){
+			if(!key_press_flag){
+						if(relay_flag.autolanding)  {
+							relay_flag.autolanding = 0;
+							relay_flag.can1_flag = 0x00;
+							relay_flag.status_flag = 0x00;
+								}
+					else{
+						relay_flag.autolanding = 1;
+						relay_flag.status_flag = 0x01;   //calibration island 
+//						relay_flag.can1_flag = 0x01;
+//						relay_flag.up = 1;
+						
+						angle_clear();
+					}
+					key_press_flag = 1;
+					return 3;
+			}
+		}
+		else if(data->key.v == (key_Ctrl|key_R)){
+			if(!key_press_flag){
 						if(relay_flag.autolanding)  {
 							relay_flag.autolanding = 0;
 							relay_flag.can1_flag = 0x00;
@@ -170,38 +195,20 @@ int8_t Auto_mode(const _RC_Ctl* data){
 					key_press_flag = 1;
 					return 3;
 			}
-				break;
 		}
-			case key_Ctrl|key_R :{			
-				if(!key_press_flag){
-					if(relay_flag.manuallanding) {
-						relay_flag.manuallanding =0;
-						relay_flag.can1_flag = 0;
-					}
-					else {
-						if(relay_flag.autolanding){
-							relay_flag.autolanding = 0;
-							relay_flag.manuallanding = 1;
-							}
-						else{
-							relay_flag.manuallanding = 1;
-							relay_flag.can1_flag = 0x01;
-							}				
-						
-				}
-				key_press_flag = 1;
-				return 4;
-			}
-				break;
+		if(data->key.v & key_Shift){
+			sys1.super_runOr_normal = 1;
+			return 2;
 		}
-			default:{
-				key_press_flag = 0;
-				return 2;
+		else{
+			sys1.super_runOr_normal = 0;
+			return 2;
 		}
-}
+	}
 }
 void send_odm_msg2(_wheel_solve * data)
 { 
+
   uint8_t uart2_send_buff[32]; 
 	uart2_send_buff[0] = 0xA0;
 	
@@ -215,10 +222,19 @@ void send_odm_msg2(_wheel_solve * data)
 	uart2_send_buff[3+4] = BYTE1(data->Vy);
 	uart2_send_buff[4+4] = BYTE0(data->Vy);
 	
-	uart2_send_buff[1+8] = BYTE3(data->Wz);
-	uart2_send_buff[2+8] = BYTE2(data->Wz);
-	uart2_send_buff[3+8] = BYTE1(data->Wz);
-	uart2_send_buff[4+8] = BYTE0(data->Wz);
+	uart2_send_buff[1+8] = BYTE3(chassisPara.yaw.angle_speed);
+	uart2_send_buff[2+8] = BYTE2(chassisPara.yaw.angle_speed);
+	uart2_send_buff[3+8] = BYTE1(chassisPara.yaw.angle_speed);
+	uart2_send_buff[4+8] = BYTE0(chassisPara.yaw.angle_speed);
+	
+//	uart2_send_buff[1+12] = BYTE3(nuc_tans_count);
+//	uart2_send_buff[2+12] = BYTE2(nuc_tans_count);
+//	uart2_send_buff[3+12] = BYTE1(nuc_tans_count);
+//	uart2_send_buff[4+12] = BYTE0(nuc_tans_count);
+	uart2_send_buff[13] = relay_flag.status_flag;
+	uart2_send_buff[14] = 0xB0;
+	New_Send_Data(uart2_send_buff,15);
+
 }
 
 void HardFault_Handler(void){

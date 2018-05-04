@@ -47,7 +47,13 @@
 .\objects\relay.o: ..\User\Inc\Referee\Referee.h
 .\objects\relay.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\relay.o: ..\User\Inc\Task\ControlTask.h
+.\objects\relay.o: ..\User\Inc\BSP\Communication.h
+.\objects\relay.o: ..\User\Inc\Task\ControlTask.h
 .\objects\relay.o: ..\User\Inc\Task\Holder.h
 .\objects\relay.o: ..\User\Inc\IMU\6050.h
 .\objects\relay.o: ..\User\Inc\IMU\I2C.h
 .\objects\relay.o: ..\User\Inc\Task\Relay.h
+.\objects\relay.o: ..\User\Inc\main.h
+.\objects\relay.o: ..\User\Inc\IMU\Imu.h
+.\objects\relay.o: ..\User\Inc\BSP\Clock.h
+.\objects\relay.o: ..\User\Inc\BSP\Boot.h

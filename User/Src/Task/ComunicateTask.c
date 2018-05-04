@@ -5,7 +5,7 @@
 _moveKey key = {0};
 _speed speed = {
 	200,
-	180,
+	250,
 	0,
 	0
 };
@@ -32,27 +32,31 @@ int8_t readRemote( unsigned char * buffer){
 	return 1;
 }
 
-int8_t commuiModeChange(int8_t* flag,const _RC_Ctl* data, _chassis* chassis){
-	
+int8_t commuiModeChange(const _RC_Ctl* data, _chassis* chassis){
+	static uint8_t mode_change =0;
 	key.clock_cnt ++;
 	switch (data->rc.s1){
 		case 3:{
-			*flag = 1;
-			relay_flag.can1_flag = 0;
+			//relay_flag.can1_flag = 0;
 			remoteControl(data , chassis);
+			mode_change =0;
+			canTrans(1, 3, &canM, Key_detect());
+			relay_flag.status_flag = 0x00;
 	//		Lidar_Func(relay_flag.take_bullet,&lidar,0);
 			return 2;
 		}
 		case 2:{
-			*flag = 0;
-			computerControl(data , chassis);
+			if(!mode_change){
+				angle_clear();
+				mode_change = 1;
+			}
+			computerControl(data, chassis);
 			return Auto_mode(&remote);
-			return 2;
 		}
 		case 1:{
-			*flag = 1;
+			mode_change =0;
 			return Auto_mode(&remote);
-			return 0;
+			relay_flag.status_flag = 0x00;
 		}
 		default: return 2;
 }
@@ -65,8 +69,8 @@ float RampCal(_RampTime *RampT)
 	{
 		RampT->lasttime = key.clock_cnt;
 	}
-	RampT->count = (float)(key.clock_cnt - RampT->lasttime) / 100;//按键持续的时间
-	if(RampT->count > 5) RampT->out = 1;
+	RampT->count = (float)(key.clock_cnt - RampT->lasttime) / 100.0f ;//按键持续的时间
+	if(RampT->count > 5.5f) RampT->out = 1;
 	else RampT->out = 1 - (float)exp(-RampT->count) ;
 	return RampT->out;
 }
@@ -179,23 +183,28 @@ int8_t computerControl(const _RC_Ctl* data, _chassis* chassis){
 
 	chassis->Fb = speed.Fb;
 	chassis->Lr = speed.Lr;
-					
+		
+		if(relay_flag.status_flag == 0x00){
 		/*yaw 向左*/
 		if( data->mouse.x > 0 )
 			{
-				if(chassis->yaw.angle < LEFT_LIMINT_ANGLE)
+				if(( data->mouse.x ) * YAW_SENSITY < LEFT_LIMINT_ANGLE)
 				{
 					chassis->yaw.temp = chassis->yaw.target + ( data->mouse.x ) * YAW_SENSITY ;
 				}
 			}
 			else if( data->mouse.x < 0 )
 			{
-				if(chassis->yaw.angle > RIGHT_LIMINT_ANGLE)
+				if(( data->mouse.x ) * YAW_SENSITY > RIGHT_LIMINT_ANGLE)
 				{
 					chassis->yaw.temp = chassis->yaw.target + ( data->mouse.x ) * YAW_SENSITY ;
 				}
 			}
+			else if(data->mouse.x == 0){
+				chassis->yaw.temp  = chassis->yaw.target + 0;
+			}
 			chassis->yaw.target = chassis->yaw.temp;		
+		}
 	return 1;
 }
 

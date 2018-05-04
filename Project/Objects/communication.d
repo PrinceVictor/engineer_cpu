@@ -47,8 +47,13 @@
 .\objects\communication.o: ..\User\Inc\Referee\Referee.h
 .\objects\communication.o: C:\Program Files (x86)\MDK\ARM\ARMCC\bin\..\include\string.h
 .\objects\communication.o: ..\User\Inc\Task\ControlTask.h
+.\objects\communication.o: ..\User\Inc\BSP\Communication.h
 .\objects\communication.o: ..\User\Inc\Task\Holder.h
 .\objects\communication.o: ..\User\Inc\IMU\6050.h
 .\objects\communication.o: ..\User\Inc\IMU\I2C.h
 .\objects\communication.o: ..\User\Inc\Task\Relay.h
 .\objects\communication.o: ..\User\Inc\Task\ControlTask.h
+.\objects\communication.o: ..\User\Inc\main.h
+.\objects\communication.o: ..\User\Inc\IMU\Imu.h
+.\objects\communication.o: ..\User\Inc\BSP\Clock.h
+.\objects\communication.o: ..\User\Inc\BSP\Boot.h

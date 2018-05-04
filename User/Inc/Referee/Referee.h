@@ -93,6 +93,7 @@ extern _lidar_message lidar;
 
 void send_odm_msg1(float *);
 
+
 extern uint8_t Tx_Buf[TX_LEN];
 extern uint8_t re_data[TX_LEN]; 
 extern unsigned char Get_CRC8_Check_Sum(unsigned char *,unsigned int,unsigned char );

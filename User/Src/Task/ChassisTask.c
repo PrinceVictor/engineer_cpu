@@ -2,7 +2,7 @@
 #include "ComunicateTask.h"
 #include "main.h"
 static float KalmanFilter_speed(const float ,float ,float );
-float Q_speed = 0.020f , R_speed = 4.5f;
+float Q_speed = 0.02f , R_speed = 7.5f;
 _wheelPara wheelInfo = {0};
 _chassis chassisPara = {0};
 int16_t set = 0;
@@ -11,30 +11,42 @@ int8_t lidar_flag;
 int const postion[8][2] = {
 	{25,360+ 310*4},{25,360+ 310*3},{25,360+ 310*2},{25,360+ 310*1},{25,360+ 310*0},{275+130,25},{275+130*1,25},{275+130*2,25}
 };
+
 _pid_Para wheelpid = {
 	20,	// kp
 	0.50f,	// ki	
 	0,	// kd
 	1,	// i flag
 	0,	// d flag
-	600,	// i limit
-	4500,	// out limit, limit range from -32768 ~ 32768
+	800,	// i limit
+	6000,	// out limit, limit range from -32768 ~ 32768
+	3	//mode flag,  0 for disable, 3 for interval isolate
+};
+
+_pid_Para super_wheelpid = {
+	27,	// kp
+	1.00f,	// ki	
+	0,	// kd
+	1,	// i flag
+	0,	// d flag
+	1000,	// i limit
+	5500,	// out limit, limit range from -32768 ~ 32768
 	3	//mode flag,  0 for disable, 3 for interval isolate
 };
 
 _pid_Para chassispid_core = {
-	7.0f,	// kp
+	9.0f,	// kp
 	0,	// ki
 	2.0f,	// kd
 	0,	// i flag
 	0,	// d flag
 	0,	// i limit
-	360,	// out limit
+	300,	// out limit
 	4	//mode flag,  0 for disable
 };
 
 _pid_Para chassispid_shell = {
-	13.0f, //180,	// kp 6.5
+	12.0f, //180,	// kp 6.5
 	0.0f,	// ki
 	1.0f,	// kd
 	0,	// i flag
@@ -46,11 +58,15 @@ _pid_Para chassispid_shell = {
 
 int8_t allParaInit(void)
 {
-	wheelInfo.kpid = wheelpid;
+	wheelInfo.kpid[0] = wheelpid;
+	wheelInfo.kpid[1] = wheelpid;
+	wheelInfo.kpid[2] = wheelpid;
+	wheelInfo.kpid[3] = wheelpid;
+	
 	wheelInfo.K_speed = 19.0f;
 	wheelInfo.speedLimit = 7000;
 	chassisPara.x = 1.8f;
-	chassisPara.y = 1.0f;
+	chassisPara.y = 1.2f;
 	chassisPara.pid.shell.k_para = chassispid_shell;
 	chassisPara.pid.core.k_para = chassispid_core;
 	remote.rc.ch0 = 1024;
@@ -60,7 +76,44 @@ int8_t allParaInit(void)
 	return 1;
 } 
 
+void para_update(){
+	if(sys1.super_runOr_normal){
+		chassisPara.x = 1.8f;
+		chassisPara.y = 1.2f;
+		wheelInfo.kpid[0] = super_wheelpid;
+		wheelInfo.kpid[1] = super_wheelpid;
+		wheelInfo.kpid[2] = super_wheelpid;
+		wheelInfo.kpid[3] = super_wheelpid;
+	}
+	else{
+		chassisPara.x = 1.5f;
+		chassisPara.y = 1.0f;
+		wheelInfo.kpid[0] = wheelpid;
+		wheelInfo.kpid[1] = wheelpid;
+		wheelInfo.kpid[2] = wheelpid;
+		wheelInfo.kpid[3] = wheelpid;
+	}
+}
 
+void rotate_control(){
+	//if(relay_flag.status_flag == 0x00){
+	pidGet(&chassisPara.pid.shell.k_para,
+														&chassisPara.pid.shell.pid,		
+														chassisPara.yaw.target,
+														chassisPara.yaw.angle);
+	//pid for angle_speed
+//		chassisPara.pid.shell.pid.Out =0;
+			chassisPara.Rt = \
+					pidGet(&chassisPara.pid.core.k_para,
+														&chassisPara.pid.core.pid,		
+//														KalmanFilter_speed(chassisPara.pid.shell.pid.Out,Q_speed,R_speed),
+														chassisPara.pid.shell.pid.Out,
+														chassisPara.yaw.angle_speed);
+//	}
+
+		chassisPara.Rt = chassisPara.Rt ;
+		chassisPara.yaw.last_target = chassisPara.yaw.target;
+}
 
 int8_t chassisControl(uint8_t flag)
 {	
@@ -71,65 +124,56 @@ int8_t chassisControl(uint8_t flag)
 	else{
 	//pid for angle
 //		chassisPara.Rt =
-			pidGet(&chassisPara.pid.shell.k_para,
-														&chassisPara.pid.shell.pid,		
-														chassisPara.yaw.target,
-														chassisPara.yaw.angle);
-	//pid for angle_speed
-//		chassisPara.pid.shell.pid.Out =0;
-			chassisPara.Rt = \
-					pidGet(&chassisPara.pid.core.k_para,
-														&chassisPara.pid.core.pid,		
-														KalmanFilter_speed(chassisPara.pid.shell.pid.Out,Q_speed,R_speed),
-														chassisPara.yaw.angle_speed);
-		
-		chassisPara.yaw.last_target = chassisPara.yaw.target;
-		
-		Send_data1[0] = (float)chassisPara.yaw.target ; 
-		Send_data1[1] = (float)chassisPara.yaw.angle;
+		rotate_control();
 
-		Send_data1[2] = (float)chassisPara.yaw.angle_speed; 
-		Send_data1[3] = (float)chassisPara.pid.shell.pid.Out;
-		
-		Send_data1[4] = (float)wheelInfo.feedback.Speed[0];
-		Send_data1[5] = (float)chassisPara.pid.core.pid.target;
-		
 //		chassisPara.Rt = 0;
 	//wheel solute
 	
 		wheelSolute(&wheelInfo, &chassisPara);
 	//pid for wheels
 		for(i=0; i<4; i++){
-			wheelInfo.out[i] = pidGet(&wheelInfo.kpid,
+			wheelInfo.out[i] = pidGet(&wheelInfo.kpid[i],
 																&wheelInfo.pid[i],
-																wheelInfo.targetSpeed[i],
+																wheelInfo.targetSpeed[i],	
 																(float)(wheelInfo.feedback.Speed[i]));
-		}		
-
+		}
 	return 1;
 }
 }
 
 int8_t wheelSolute(_wheelPara* para, _chassis* chassis){
 	int i;
-	
+//	if( abs(chassis->Rt) > 120.0f){
+//			chassisPara.x = 1.0f;
+//	chassisPara.y = 1.4f;
+//	}
+//	if(abs(chassis->Fb) > 120.0f || abs(chassis->Lr) > 120.0f){
+//		chassisPara.x = 1.8f;
+//		chassisPara.y = 0.6f;
+//}
+//else{
+//		chassisPara.x = 1.8f;
+//	chassisPara.y = 1.2f;
+//}
 	para->direction[0] = \
-		chassis->x*(-chassis->Fb +chassis->Lr) + chassis->y* chassis->Rt;
+		chassis->x*(-chassis->Fb +chassis->Lr*1.2f) + chassis->y* chassis->Rt;
 	para->direction[1] = \
-		chassis->x*(chassis->Fb +chassis->Lr) + chassis->y* chassis->Rt;
+		chassis->x*(chassis->Fb +chassis->Lr*1.2f) + chassis->y* chassis->Rt;
 	para->direction[2] = \
-		chassis->x*(chassis->Fb -chassis->Lr) + chassis->y* chassis->Rt;
+		chassis->x*(chassis->Fb -chassis->Lr*1.2f) + chassis->y* chassis->Rt;
 	para->direction[3] = \
-		chassis->x*(-chassis->Fb -chassis->Lr) + chassis->y* chassis->Rt;
+		chassis->x*(-chassis->Fb -chassis->Lr*1.2f) + chassis->y* chassis->Rt;
 	
 	for(i=0; i<4; i++ ){
 		para->targetSpeed[i] = \
 			-amplitudeLimiting(1, para->direction[i]*para->K_speed, para->speedLimit);
-}
+	}
 	return 1;
 }
 
-int8_t Lidar_Func(const uint8_t control_flag, const _lidar_message* lidar1, int8_t pos){
+
+
+int8_t Lidar_Func(const uint8_t control_flag,  _lidar_message* lidar1, int8_t pos){
 	static uint8_t lidar_flag;
 	float d1,d2,angle;
 	if(control_flag != 1){
@@ -142,12 +186,13 @@ int8_t Lidar_Func(const uint8_t control_flag, const _lidar_message* lidar1, int8
 		if(lidar1->flag){
 		d1 = lidar1->d1;
 		d2 = lidar1->d2;
-		if(abs(lidar1->angle)<0.5f) angle =0;
-		else angle = lidar1->angle/160;
+		if(abs(lidar1->angle)<1.0f) angle =0;
+		else angle = lidar1->angle/1000.0f;
 		chassisPara.yaw.target = chassisPara.yaw.target + angle;
-		chassisPara.Fb = amplitudeLimiting(1, (d1 - postion[pos][0])/10.0f, 200);
-		chassisPara.Lr = amplitudeLimiting(1, (d2 - postion[pos][1])/10.0f, 150);
+		chassisPara.Fb = amplitudeLimiting(1, (d1 )/10.0f, 200);
+		chassisPara.Lr = amplitudeLimiting(1, (d2 )/10.0f, 150);
 		lidar_flag = 1;
+	//	lidar1->flag = 0;
 		return 1;
 }
 else{
@@ -183,3 +228,4 @@ static float KalmanFilter_speed(const float ResrcData,float ProcessNiose_Q,float
    x_last = x_now; //更新系统状态值
    return x_now;                
  }
+

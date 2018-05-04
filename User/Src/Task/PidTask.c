@@ -19,7 +19,10 @@ int16_t pidGet(_pid_Para* pidPara,
 		
 		switch(pidPara->flag){
 		case 1:  break;
-		case 2:  break;
+		case 2:  {
+			pidOut->error = pidOut->error * 0.01f;
+			break;
+		}
 		case 3: {
 			pidOut->error = pidOut->error * 0.5f;
 			if(pidOut->target == 0){
@@ -36,7 +39,7 @@ int16_t pidGet(_pid_Para* pidPara,
 		case 4:  
 		{
 			pidOut->error = pidOut->error * 0.1f;
-			if(abs(pidOut->target)<10.0f && abs(pidOut->error)<0.5f  && !chassisPara.yaw.target_changeMode ) {
+			if(abs(pidOut->target)<10.0f && abs(pidOut->error)<1.0f  && !chassisPara.yaw.target_changeMode ) {
 				pidOut->error = 0;
 			}
 //			if((abs(pidOut->error) > 30 ) && chassisPara.yaw.target_changeMode) pidPara ->i_flag = 1;
@@ -56,7 +59,7 @@ int16_t pidGet(_pid_Para* pidPara,
 			break;
 }
 		case 5: {
-			if((abs(pidOut->error) < 0.5f) &&(!chassisPara.yaw.target_changeMode)) pidOut->error = 0;
+			if((abs(pidOut->error) < 0.8f) &&(!chassisPara.yaw.target_changeMode)) pidOut->error = 0;
 			else {
 				pidOut->error = amplitudeLimiting(1, pidOut->error, 40);
 				Subsection_PID(1, pidOut->error, 5, k,  Scale);
