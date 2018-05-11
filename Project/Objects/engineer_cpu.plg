@@ -3,7 +3,647 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-E:\RM2018\engineer_cpu\Project\engineerVehicle.uvproj
+E:\RM2018\5.9\4.29engineer_cpu\Project\engineerVehicle.uvproj
 Project File Date:  04/12/2018
 
 <h2>Output:</h2>
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40714 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40714 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40930 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40898 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40898 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40898 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40930 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=40930 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=40930 RO-data=1862 RW-data=748 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=33532 RO-data=1620 RW-data=636 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=33532 RO-data=1620 RW-data=636 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=33524 RO-data=1620 RW-data=636 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+linking...
+Program Size: Code=33156 RO-data=1620 RW-data=636 ZI-data=5612  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Clock.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling Imu.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(18): warning:  #223-D: function "holder_Init" declared implicitly
+..\User\Src\Task\ControlTask.c(178): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+..\User\Src\Task\ComunicateTask.c(132): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ComunicateTask.c(230): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ComunicateTask.c(235): error:  #20: identifier "motor" is undefined
+compiling holder.c...
+..\User\Src\Task\holder.c(114): warning:  #1-D: last line of file ends without a newline
+compiling ChassisTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ChassisTask.c(191): warning:  #177-D: variable "angle" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(194): warning:  #177-D: variable "rotate" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(372): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling Relay.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\Relay.c(36): warning:  #177-D: variable "stick_press_flag" was declared but never referenced
+..\User\Src\Task\Relay.c(57): warning:  #550-D: variable "sensor_next_step" was set but never used
+..\User\Src\Task\Relay.c(595): warning:  #177-D: variable "count2" was declared but never referenced
+..\User\Src\Task\Relay.c(597): warning:  #177-D: variable "last_target2" was declared but never referenced
+".\Objects\engineer_cpu.axf" - 7 Errors, 33 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Clock.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling Imu.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(178): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+..\User\Src\Task\ComunicateTask.c(132): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ComunicateTask.c(230): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ComunicateTask.c(235): error:  #20: identifier "motor" is undefined
+compiling holder.c...
+..\User\Src\Task\holder.c(114): warning:  #1-D: last line of file ends without a newline
+compiling ChassisTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ChassisTask.c(191): warning:  #177-D: variable "angle" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(194): warning:  #177-D: variable "rotate" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(372): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling Relay.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\Relay.c(36): warning:  #177-D: variable "stick_press_flag" was declared but never referenced
+..\User\Src\Task\Relay.c(57): warning:  #550-D: variable "sensor_next_step" was set but never used
+..\User\Src\Task\Relay.c(595): warning:  #177-D: variable "count2" was declared but never referenced
+..\User\Src\Task\Relay.c(597): warning:  #177-D: variable "last_target2" was declared but never referenced
+".\Objects\engineer_cpu.axf" - 7 Errors, 32 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(178): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+..\User\Src\Task\ComunicateTask.c(231): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ComunicateTask.c(236): error:  #20: identifier "motor" is undefined
+".\Objects\engineer_cpu.axf" - 6 Errors, 10 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(178): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+".\Objects\engineer_cpu.axf" - 4 Errors, 10 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(178): error:  #20: identifier "motor" is undefined
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+".\Objects\engineer_cpu.axf" - 4 Errors, 7 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\BSP\Communication.c(227): error:  #20: identifier "motor" is undefined
+..\User\Src\BSP\Communication.c(233): error:  #20: identifier "motor" is undefined
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+".\Objects\engineer_cpu.axf" - 3 Errors, 7 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\main.c(14): error:  #20: identifier "pos" is undefined
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+".\Objects\engineer_cpu.axf" - 1 Errors, 4 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+.\Objects\engineer_cpu.axf: Error: L6218E: Undefined symbol holder_Init (referred from controltask.o).
+".\Objects\engineer_cpu.axf" - 1 Errors, 2 Warning(s).
+Target not created
+Build target 'engineer_cpu'
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(18): warning:  #223-D: function "holder_init" declared implicitly
+..\User\Src\Task\ControlTask.c(332): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+linking...
+Program Size: Code=32300 RO-data=1612 RW-data=524 ZI-data=5308  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32300 RO-data=1612 RW-data=524 ZI-data=5308  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Build target 'engineer_cpu'
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(18): warning:  #223-D: function "holder_init" declared implicitly
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+linking...
+Program Size: Code=32308 RO-data=1612 RW-data=524 ZI-data=5308  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Clock.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Imu.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+compiling holder.c...
+..\User\Src\Task\holder.c(114): warning:  #1-D: last line of file ends without a newline
+compiling ChassisTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ChassisTask.c(191): warning:  #177-D: variable "angle" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(194): warning:  #177-D: variable "rotate" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(372): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling Relay.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\Relay.c(36): warning:  #177-D: variable "stick_press_flag" was declared but never referenced
+..\User\Src\Task\Relay.c(57): warning:  #550-D: variable "sensor_next_step" was set but never used
+..\User\Src\Task\Relay.c(595): warning:  #177-D: variable "count2" was declared but never referenced
+..\User\Src\Task\Relay.c(597): warning:  #177-D: variable "last_target2" was declared but never referenced
+linking...
+Program Size: Code=32308 RO-data=1612 RW-data=524 ZI-data=5308  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 32 Warning(s).
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32308 RO-data=1612 RW-data=524 ZI-data=5308  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling holder.c...
+..\User\Src\Task\holder.c(114): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=32284 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 4 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Clock.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Imu.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+compiling ChassisTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ChassisTask.c(191): warning:  #177-D: variable "angle" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(194): warning:  #177-D: variable "rotate" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(372): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling Relay.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\Relay.c(36): warning:  #177-D: variable "stick_press_flag" was declared but never referenced
+..\User\Src\Task\Relay.c(57): warning:  #550-D: variable "sensor_next_step" was set but never used
+..\User\Src\Task\Relay.c(595): warning:  #177-D: variable "count2" was declared but never referenced
+..\User\Src\Task\Relay.c(597): warning:  #177-D: variable "last_target2" was declared but never referenced
+linking...
+Program Size: Code=32332 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 31 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=32348 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Build target 'engineer_cpu'
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(264): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(265): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(370): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(366): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(367): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32316 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).
+Build target 'engineer_cpu'
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(281): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(282): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(387): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(383): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(384): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32324 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 8 Warning(s).
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32324 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32324 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+linking...
+Program Size: Code=32316 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 2 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32316 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32316 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Build target 'engineer_cpu'
+linking...
+Program Size: Code=32316 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 0 Warning(s).
+Load "E:\\RM2018\\5.9\\4.29engineer_cpu\\Project\\Objects\\engineer_cpu.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'engineer_cpu'
+compiling main.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Boot.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Clock.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Communication.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+compiling Imu.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\IMU\Imu.c(42): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\IMU\Imu.c(52): warning:  #177-D: variable "q0q3" was declared but never referenced
+..\User\Src\IMU\Imu.c(54): warning:  #177-D: variable "q1q2" was declared but never referenced
+..\User\Src\IMU\Imu.c(249): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling ControlTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ControlTask.c(333): warning:  #940-D: missing return statement at end of non-void function "Auto_mode"
+compiling ComunicateTask.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\ComunicateTask.c(66): warning:  #111-D: statement is unreachable
+compiling ChassisTask.c...
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Src\Task\ChassisTask.c(191): warning:  #177-D: variable "angle" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(194): warning:  #177-D: variable "rotate" was declared but never referenced
+..\User\Src\Task\ChassisTask.c(372): warning:  #177-D: function "KalmanFilter_speed" was declared but never referenced
+compiling PidTask.c...
+..\User\Src\Task\PidTask.c(11): warning:  #177-D: variable "last_target" was declared but never referenced
+compiling Relay.c...
+..\User\Inc\Task\ControlTask.h(31): warning:  #1295-D: Deprecated declaration runControl - give arg types
+..\User\Inc\Task\Relay.h(77): warning:  #1295-D: Deprecated declaration Key_detect - give arg types
+..\User\Src\Task\Relay.c(36): warning:  #177-D: variable "stick_press_flag" was declared but never referenced
+..\User\Src\Task\Relay.c(57): warning:  #550-D: variable "sensor_next_step" was set but never used
+..\User\Src\Task\Relay.c(595): warning:  #177-D: variable "count2" was declared but never referenced
+..\User\Src\Task\Relay.c(597): warning:  #177-D: variable "last_target2" was declared but never referenced
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(304): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(305): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(410): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(406): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(407): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32468 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 37 Warning(s).
+Build target 'engineer_cpu'
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(313): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(314): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(419): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(415): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(416): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32532 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).
+Build target 'engineer_cpu'
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(313): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(314): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(419): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(415): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(416): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32532 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).
+Build target 'engineer_cpu'
+compiling Referee.c...
+..\User\Src\Referee\Referee.c(313): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(314): warning:  #177-D: variable "i" was declared but never referenced
+..\User\Src\Referee\Referee.c(419): warning:  #177-D: variable "first_comein" was declared but never referenced
+..\User\Src\Referee\Referee.c(415): warning:  #550-D: variable "this_time_rx_len" was set but never used
+..\User\Src\Referee\Referee.c(416): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=32532 RO-data=1612 RW-data=524 ZI-data=5148  
+FromELF: creating hex file...
+".\Objects\engineer_cpu.axf" - 0 Errors, 5 Warning(s).

@@ -1,6 +1,8 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#define led_status PCout(0)
+
 #include "stm32f4xx.h"
 #include "MyFunc.h"
 #include "Imu.h"

@@ -8,7 +8,7 @@
 
 void can2Config(void);
 void remoteConfig(void);
-
+void can1Config(void);
 void PMM_Init(void);
 void Steering_Config(void);
 

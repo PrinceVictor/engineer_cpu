@@ -50,13 +50,21 @@ typedef struct{
 	uint8_t up;
 	uint8_t down;
 	uint8_t take_bullet;
+	uint8_t bullet_position;  //from left 1 to right 5 with the axis in wiznote
 	uint8_t rescue;
+	uint8_t rescue_catched;
+	uint8_t allocate_flag;
+	uint8_t allocate_finished_flag;
+	uint8_t allocate_start_flag;
+	uint8_t allocate_hero_base;
+	uint8_t allocate_infantry;
 	uint8_t status_flag;
 }_relay_flag;
 
 typedef struct{
 	uint8_t verifed_code;
 	uint8_t flag;
+	uint8_t flag2;
 	uint8_t _1st;
 	uint8_t _2nd;
 	uint8_t _3rd;
@@ -67,6 +75,6 @@ extern _relay_flag relay_flag;
 extern _laser_sensor redlaser;
 
 extern int16_t* Key_detect();
-extern int8_t auto_move(float, uint8_t, uint8_t, _lidar_message* lidar1);
+extern int8_t auto_move(float, uint8_t, uint8_t);
 #endif
 

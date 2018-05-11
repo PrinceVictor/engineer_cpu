@@ -20,7 +20,10 @@ int16_t pidGet(_pid_Para* pidPara,
 		switch(pidPara->flag){
 		case 1:  break;
 		case 2:  {
-			pidOut->error = pidOut->error * 0.01f;
+			pidOut->error = pidOut->error;
+			pidOut->i_interval = amplitudeLimiting(pidPara->i_flag,
+											pidOut->i_interval,
+											pidPara->ki_limit);
 			break;
 		}
 		case 3: {
@@ -65,6 +68,10 @@ int16_t pidGet(_pid_Para* pidPara,
 				Subsection_PID(1, pidOut->error, 5, k,  Scale);
 				break;
 			}
+			break;
+}
+		case 6: {
+			pidOut->error = pidOut->error * 0.1f;
 			break;
 }
 	

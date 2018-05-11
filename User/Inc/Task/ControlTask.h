@@ -15,6 +15,8 @@
 #define run	 2
 #define auto_landing 3
 #define manual_landing 4
+#define rescue_flag 5
+#define allocation 6
 #define stop 0
 #define reset -1
 

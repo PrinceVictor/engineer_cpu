@@ -16,6 +16,9 @@
 #define LEFT_LIMINT_ANGLE 40.0f //角度限制
 #define RIGHT_LIMINT_ANGLE -40.0f//角度限制
 
+#define UP_LIMINT_ANGLE 40.0f //角度限制
+#define DOWN_LIMINT_ANGLE -40.0f//角度限制
+
 typedef struct RC_Ctl
 {
 	struct
@@ -81,7 +84,7 @@ int8_t commuiModeChange(const _RC_Ctl* , _chassis* );
 int8_t computerControl(const _RC_Ctl*,_chassis*);
 int8_t remoteControl(const _RC_Ctl* , _chassis*);
 
-int8_t can1Trans(uint8_t);
+int8_t can1Trans(uint8_t, int8_t , _canMessage* , int16_t* );
 
 extern _RC_Ctl remote;
 extern _moveKey key;

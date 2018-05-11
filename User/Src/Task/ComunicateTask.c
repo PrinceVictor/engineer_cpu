@@ -37,9 +37,14 @@ int8_t commuiModeChange(const _RC_Ctl* data, _chassis* chassis){
 	key.clock_cnt ++;
 	switch (data->rc.s1){
 		case 3:{
-			//relay_flag.can1_flag = 0;
+			if(mode_change){
+				angle_clear();
+				mode_change =0;
+			}
+			
+			relay_flag.can1_flag = 0;
 			remoteControl(data , chassis);
-			mode_change =0;
+			
 			canTrans(1, 3, &canM, Key_detect());
 			relay_flag.status_flag = 0x00;
 	//		Lidar_Func(relay_flag.take_bullet,&lidar,0);
@@ -50,7 +55,9 @@ int8_t commuiModeChange(const _RC_Ctl* data, _chassis* chassis){
 				angle_clear();
 				mode_change = 1;
 			}
-			computerControl(data, chassis);
+			if(!relay_flag.autolanding){
+				computerControl(data, chassis);
+			}
 			return Auto_mode(&remote);
 		}
 		case 1:{
@@ -121,6 +128,20 @@ int8_t remoteControl(const _RC_Ctl* data, _chassis* chassis){
 		count = 0;
 }
 	count++;
+#if 0
+	if(abs(1024 - data->rc.ch3)<50)  motor.pitch.target_temp = 0;
+	else motor.pitch.target_temp = -( 1024 - data->rc.ch3 ) * 0.0005f;
+	motor.pitch.target_temp = amplitudeLimiting(1 , motor.pitch.target_temp , 0.20f);
+	
+	motor.pitch.target = motor.pitch.target + motor.pitch.target_temp ;
+
+	if(motor.pitch.target > 48.0f){
+		motor.pitch.target = 48.0f;
+	}
+	else if(motor.pitch.target < -15.0f){
+		motor.pitch.target = -15.0f;
+	}
+#endif
 	return 1;
 }
 
@@ -203,8 +224,21 @@ int8_t computerControl(const _RC_Ctl* data, _chassis* chassis){
 			else if(data->mouse.x == 0){
 				chassis->yaw.temp  = chassis->yaw.target + 0;
 			}
-			chassis->yaw.target = chassis->yaw.temp;		
+			chassis->yaw.target = chassis->yaw.temp;	
+#if 0
+if( data->mouse.y > 0 ){
+			if(data->mouse.y* PITCH_SENSITY < UP_LIMINT_ANGLE){
+				motor.pitch.target_temp = motor.pitch.target + data->mouse.y* PITCH_SENSITY;
+			}
 		}
+		else if(data->mouse.y < 0){
+			if(data->mouse.y* PITCH_SENSITY > UP_LIMINT_ANGLE){
+				motor.pitch.target_temp = motor.pitch.target + data->mouse.y* PITCH_SENSITY;
+			}
+		}	
+#endif		
+		}
+
 	return 1;
 }
 
@@ -275,17 +309,19 @@ int8_t canTrans(uint8_t flag,
 }
 }
 
-int8_t can1Trans(uint8_t flag)
+int8_t can1Trans(uint8_t flag, 
+								int8_t mode,
+								_canMessage* message, 
+								int16_t* data)
 {	
 	uint8_t TransmitMailbox;//·¢ËÍÐÅÏäºÅ
 	int16_t t;
-	canM1.canTx.StdId = 0x02;
-	canM1.canTx.Data[0]  = can1transmit;
 	if(!flag) return 0;
 		else{
-		TransmitMailbox = CAN_Transmit(CAN2, &canM1.canTx );
+		transferType(mode, message, data);
+		TransmitMailbox = CAN_Transmit(CAN1, &message->canTx);
 		t=0;
-		while((CAN_TransmitStatus(CAN2,TransmitMailbox)!=CANTXOK)&&(t<0xff))
+		while((CAN_TransmitStatus(CAN1,TransmitMailbox)!=CANTXOK)&&(t<0xff))
 		{
 			t++;
 		}

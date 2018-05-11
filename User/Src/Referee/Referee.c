@@ -1,7 +1,7 @@
 #include "referee.h"
 /*-----USART3_TX-----PB10-----*/
 /*-----USART3_RX-----PB11-----*/
-uint8_t recieveData[15]={0};
+uint8_t recieveData[17]={0};
 _lidar_message lidar;
 
 uint8_t meta_data[BSP_USART3_DMA_RX_BUF_LEN];
@@ -10,15 +10,19 @@ _JUDGMENT_01_DATA Judgment_01_data;
 _JUDGMENT_02_DATA Judgment_02_data;
 _JUDGMENT_03_DATA Judgment_03_data;
 _JUDGMENT_04_DATA Judgment_04_data;
-
+_JUDGMENT_05_DATA Judgment_05_data;
+_JUDGMENT_06_DATA Judgment_06_data;
+_JUDGMENT_07_DATA Judgment_07_data;
+_JUDGMENT_08_DATA Judgment_08_data;
 //WAU:where are u?
 float temp_V,temp_A,temp_W,temp_J,temp_ss,temp_sf,temp_bs,temp_bf;
 
 uint8_t Tx_Buf[TX_LEN];
-uint8_t re_data[TX_LEN];
+uint8_t Tx_Buf2[TX_LEN];
 uint8_t Flag_Uart_Busy=0;
+uint8_t Flag_Uart_Busy2=0;
 
-void refereeConfig(void){
+void nucConfig(void){
 
 
     USART_InitTypeDef usart2;
@@ -62,7 +66,7 @@ void refereeConfig(void){
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&(USART2->DR);
     DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)recieveData;//(uint32_t)EnemyData;
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-    DMA_InitStructure.DMA_BufferSize = 15;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
+    DMA_InitStructure.DMA_BufferSize =17;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
     DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
@@ -115,11 +119,10 @@ void refereeConfig(void){
     USART_DMACmd(USART2,USART_DMAReq_Tx,ENABLE);
     
 		USART_Cmd(USART2,ENABLE);
-
 }
 
 
-void mainfoldConfig(void)
+void refereeConfig(void)
 {
     USART_InitTypeDef usart3;
 		GPIO_InitTypeDef  gpio;
@@ -160,7 +163,7 @@ void mainfoldConfig(void)
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&(USART3->DR);
     DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)meta_data;//(uint32_t)EnemyData;
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-    DMA_InitStructure.DMA_BufferSize = 14;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
+    DMA_InitStructure.DMA_BufferSize = BSP_USART3_DMA_RX_BUF_LEN;   //BSP_USART3_DMA_RX_BUF_LEN;//100;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
     DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
@@ -173,20 +176,43 @@ void mainfoldConfig(void)
     DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
     DMA_Init(DMA1_Stream1,&DMA_InitStructure);
     
+		DMA_DeInit(DMA1_Stream3);
+    DMA_InitStructure.DMA_Channel = DMA_Channel_4; 
+    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(&USART3->DR);
+    DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)Tx_Buf2;//send buffer
+    DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;
+    DMA_InitStructure.DMA_BufferSize = TX_LEN; //8
+    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+    DMA_InitStructure.DMA_MemoryDataSize = DMA_PeripheralDataSize_Byte;
+    DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
+    DMA_InitStructure.DMA_Priority = DMA_Priority_VeryHigh; 
+    DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;
+    DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_HalfFull;
+    DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
+    DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
+    DMA_Init(DMA1_Stream3, &DMA_InitStructure);
+		
 		NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;  //TIM3中断
-		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;  //先占优先级0级
-		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;  //从优先级3级
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;  //先占优先级0级
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;  //从优先级3级
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; //IRQ通道被使能
 		NVIC_Init(&NVIC_InitStructure);  //初始化NVIC寄存器
     
+		NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream3_IRQn;  
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;  
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;  
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure); 
+		
     USART_ITConfig( USART3 , USART_IT_IDLE , ENABLE );//空闲中断
     
     DMA_Cmd(DMA1_Stream1,ENABLE);//RX		 
-    
+    DMA_Cmd(DMA1_Stream3,ENABLE);
 		USART_DMACmd(USART3,USART_DMAReq_Rx,ENABLE);
-    
+    USART_DMACmd(USART3,USART_DMAReq_Tx,ENABLE);
 		USART_Cmd(USART3,ENABLE);
-
 }
 void DMA1_Stream6_IRQHandler(void)
 {
@@ -196,7 +222,16 @@ void DMA1_Stream6_IRQHandler(void)
   Flag_Uart_Busy = 0;
   }
 }
-void New_Send_Data(uint8_t *data,uint16_t size)
+
+void DMA1_Stream3_IRQHandler(void)
+{
+  if(DMA_GetFlagStatus(DMA1_Stream3,DMA_FLAG_TCIF6)!=RESET){
+  DMA_ClearFlag(DMA1_Stream3,DMA_FLAG_TCIF6);
+  DMA_Cmd(DMA1_Stream3,DISABLE);
+  Flag_Uart_Busy2 = 0;
+  }
+}
+void New_Send_Data(uint8_t *data,uint16_t size)  //uart2 nuc
 {
   while(!Flag_Uart_Busy)
   {
@@ -211,7 +246,22 @@ void New_Send_Data(uint8_t *data,uint16_t size)
 	}
 }
 
-void send_odm_msg1(float * data)
+void New_Send_Data2(uint8_t *data, uint16_t size)  //uart2 nuc
+{
+  while(!Flag_Uart_Busy2)
+  {
+  Flag_Uart_Busy2 = 1;
+  
+  memcpy(Tx_Buf2,data,size); 
+  
+  DMA_SetCurrDataCounter(DMA1_Stream3,size);
+  
+  DMA_Cmd(DMA1_Stream3,ENABLE);
+			
+	}
+}
+
+void send_odm_msg1(float * data)  //uart3 referee
 { 
 	int i=0;
 	//PID_out;
@@ -237,24 +287,24 @@ void send_odm_msg1(float * data)
     New_Send_Data(uart2_send_buff,29);
 }
 
-void send_check(uint16_t data)
+void SendtoReferee(uint8_t * send_data)
 {
-  uint8_t uart2_send_buff[32]; 
-	uint16_t sum=0,i;
-	uart2_send_buff[0] = 0xAA;
-	uart2_send_buff[1] = 0xAA;
-	uart2_send_buff[2] = 0xEF;
-	uart2_send_buff[3] = 2;
-  uart2_send_buff[4] = 0x10;
-  uart2_send_buff[5] = data;
-  
-  for(i=0;i<6;i++)
-  {
-    sum+=uart2_send_buff[i];
-  }
-  uart2_send_buff[6] = sum;
-  New_Send_Data(uart2_send_buff,7);
+
+	send_data[0] = 0xA5;	
+	send_data[1] = 0x0D;
+	send_data[2] = 0x00;
+	send_data[3] = 0x04;
+
+	Append_CRC8_Check_Sum(send_data,5);
+	
+	send_data[5] = 0x00;
+	send_data[6] = 0x01;
+
+	Append_CRC16_Check_Sum(send_data , 22);
+	
+	New_Send_Data2(send_data,22);
 }
+
 
 int dara = 0,time_count = 0;
 
@@ -272,41 +322,101 @@ void USART3_IRQHandler(void)
 		{
 			DMA_Cmd(DMA1_Stream1, DISABLE);
     
-			this_time_rx_len = 14 - DMA_GetCurrDataCounter(DMA1_Stream1);
+			this_time_rx_len = BSP_USART3_DMA_RX_BUF_LEN - DMA_GetCurrDataCounter(DMA1_Stream1);
 		
-			DMA1_Stream1->NDTR = (uint16_t)14;     //relocate the dma memory pointer to the beginning position
+			DMA1_Stream1->NDTR = (uint16_t)17;     //relocate the dma memory pointer to the beginning position
 			//DMA1_Stream1->CR |= (uint32_t)(DMA_SxCR_CT);                  //enable the current selected memory is Memory 1
 			DMA_Cmd(DMA1_Stream1, ENABLE);
-//			if(recieveData[0] ==  0xab){
-//			lidar.flag = recieveData [13];
+ //裁判系统消息
+      if(meta_data[0]==0xA5)
+      {
+        switch(meta_data[5])
+        {
+          case 0x01:{
+            
+            //从600s减到0 已确定
+						Judgment_01_data.left_time_S = meta_data[7]+(meta_data[8]<<8);			
+						Judgment_01_data.game_status = meta_data[9];
+						Judgment_01_data.robot_level = meta_data[10];
+						Judgment_01_data.left_HP = meta_data[11] + (meta_data[12]<<8);
+						Judgment_01_data.full_HP = meta_data[13];
 
-//			BYTE0(lidar.d1) = recieveData[0+1 + 0*4];
-//      BYTE1(lidar.d1) = recieveData[1+1 + 0*4];
-//      BYTE2(lidar.d1) = recieveData[2+1+ 0*4];
-//      BYTE3(lidar.d1) = recieveData[3+1+ 0*4];
-//				
-//			BYTE0(lidar.d2) = recieveData[0+1 + 1*4];
-//      BYTE1(lidar.d2) = recieveData[1+1 + 1*4];
-//      BYTE2(lidar.d2) = recieveData[2+1+ 1*4];
-//      BYTE3(lidar.d2) = recieveData[3+1+ 1*4];
-//				
-//			BYTE0(lidar.angle) = recieveData[0+1 + 2*4];
-//      BYTE1(lidar.angle) = recieveData[1+1 + 2*4];
-//      BYTE2(lidar.angle) = recieveData[2+1+ 2*4];
-//      BYTE3(lidar.angle) = recieveData[3+1+ 2*4];
-//}
+          break;}
+        //打击信息
+      
+						case 0x02:{
+          
+							Judgment_02_data.was_attacked_id = meta_data[7]&0x0f;
+							Judgment_02_data.was_attacked_type = (meta_data[7]&0xf0) >>4; 
+
+          break;}
+        case 0x03:{
+          
+					Judgment_03_data.bullet_type = meta_data[7];
+					Judgment_03_data.bullet_freqz = meta_data[8];
+					Judgment_03_data.bullet_speed = meta_data[9];
+      
+        break;}
+				
+				case 0x04:{
+					BYTE0(Judgment_04_data.chassis_voltage) = meta_data[7];
+					BYTE1(Judgment_04_data.chassis_voltage) = meta_data[8];
+					BYTE2(Judgment_04_data.chassis_voltage) = meta_data[9];
+					BYTE3(Judgment_04_data.chassis_voltage) = meta_data[10];
+					
+					BYTE0(Judgment_04_data.chassis_current) = meta_data[11];
+					BYTE1(Judgment_04_data.chassis_current) = meta_data[12];
+					BYTE2(Judgment_04_data.chassis_current) = meta_data[13];
+					BYTE3(Judgment_04_data.chassis_current) = meta_data[14];
+					
+					BYTE0(Judgment_04_data.chassis_power) = meta_data[15];
+					BYTE1(Judgment_04_data.chassis_power) = meta_data[16];
+					BYTE2(Judgment_04_data.chassis_power) = meta_data[17];
+					BYTE3(Judgment_04_data.chassis_power) = meta_data[18];
+					
+					BYTE0(Judgment_04_data.chassis_power_left) = meta_data[19];
+					BYTE1(Judgment_04_data.chassis_power_left) = meta_data[20];
+					BYTE2(Judgment_04_data.chassis_power_left) = meta_data[21];
+					BYTE3(Judgment_04_data.chassis_power_left) = meta_data[22];
+					
+					Judgment_04_data.small_shooter_heat = meta_data[23] + (meta_data[24]<<8);
+					Judgment_04_data.big_shooter_heat = meta_data[25] + (meta_data[26]<<8);				
+}
+				case 0x05:{
+          
+					Judgment_05_data.cardtype = meta_data[7];
+					Judgment_05_data.cardsubnum = meta_data[8];
+      
+        break;}
+				
+				case 0x06:{
+          
+					Judgment_06_data.game_result = meta_data[7];
+      
+        break;}
+				
+				case 0x07:{
+          
+					Judgment_07_data.buff = meta_data[7];
+					Judgment_07_data.buff_percent = meta_data[8];
+      
+        break;}
+      
+       }//switch 
+      }//协议解算部分       
 
 }
 }
 }
 
-
+//nuc
 void USART2_IRQHandler(void)
 {
   static uint32_t this_time_rx_len = 0;
   uint8_t i=0;
 	if(USART_GetITStatus(USART2, USART_IT_IDLE) != RESET)
 	{
+		static uint8_t first_comein;
 		//clear the idle pending flag 
 		(void)USART2->SR;
  		(void)USART2->DR;
@@ -315,161 +425,36 @@ void USART2_IRQHandler(void)
 		{
 			DMA_Cmd(DMA1_Stream5, DISABLE);
     
-			this_time_rx_len = 15 - DMA_GetCurrDataCounter(DMA1_Stream5);
-			DMA1_Stream5->NDTR = (uint16_t)15;     //relocate the dma memory pointer to the beginning position
+			this_time_rx_len = 17- DMA_GetCurrDataCounter(DMA1_Stream5);
+			DMA1_Stream5->NDTR = (uint16_t)17;     //relocate the dma memory pointer to the beginning position
 			//DMA1_Stream1->CR |= (uint32_t)(DMA_SxCR_CT);                  //enable the current selected memory is Memory 1
 			DMA_Cmd(DMA1_Stream5, ENABLE);
 		
       //视具体协议而定
-     if(recieveData[0] ==  0xa0 && recieveData[14]== 0xb0){
-			lidar.flag = recieveData [1];
-
-			BYTE0(lidar.d1) = recieveData[0+2 + 0*4];
-      BYTE1(lidar.d1) = recieveData[1+2 + 0*4];
-      BYTE2(lidar.d1) = recieveData[2+2+ 0*4];
-      BYTE3(lidar.d1) = recieveData[3+2+ 0*4];
+     if(recieveData[0] ==  0xa0 && recieveData[16]== 0xb0){
+			lidar.flag.status_flag = recieveData [1];
+			lidar.flag.turn_flag = recieveData[2];
+			lidar.flag.direction = recieveData[3];
+			BYTE0(lidar.d1) = recieveData[0+4 + 0*4];
+      BYTE1(lidar.d1) = recieveData[1+4 + 0*4];
+      BYTE2(lidar.d1) = recieveData[2+4 + 0*4];
+      BYTE3(lidar.d1) = recieveData[3+4 + 0*4];
 				
-			BYTE0(lidar.d2) = recieveData[0+2 + 1*4];
-      BYTE1(lidar.d2) = recieveData[1+2 + 1*4];
-      BYTE2(lidar.d2) = recieveData[2+2+ 1*4];
-      BYTE3(lidar.d2) = recieveData[3+2+ 1*4];
+			BYTE0(lidar.d2) = recieveData[0+4 + 1*4];
+      BYTE1(lidar.d2) = recieveData[1+4 + 1*4];
+      BYTE2(lidar.d2) = recieveData[2+4+ 1*4];
+      BYTE3(lidar.d2) = recieveData[3+4+ 1*4];
 				
-			BYTE0(lidar.angle) = recieveData[0+2 + 2*4];
-      BYTE1(lidar.angle) = recieveData[1+2 + 2*4];
-      BYTE2(lidar.angle) = recieveData[2+2+ 2*4];
-      BYTE3(lidar.angle) = recieveData[3+2+ 2*4];
+			BYTE0(lidar.angle) = recieveData[0+4 + 2*4];
+      BYTE1(lidar.angle) = recieveData[1+4 + 2*4];
+      BYTE2(lidar.angle) = recieveData[2+4 + 2*4];
+      BYTE3(lidar.angle) = recieveData[3+4 + 2*4];
+			 
 		}
-      //裁判系统消息
-//      if(meta_data[0]==0xA5)
-//      {
-//        switch(meta_data[5])
-//        {
-//          case 0x01:{
-//            
-//            //从600s减到0 已确定
-//          Judgment_01_data.left_time_S = meta_data[7]+(meta_data[8]<<8)+ \
-//                                        (meta_data[9]<<16)+(meta_data[10]<<24);
-//            
-//          Judgment_01_data.left_HP = meta_data[11] + (meta_data[12]<<8);
-//            
-//          BYTE0(temp_V) = meta_data[13];
-//          BYTE1(temp_V) = meta_data[14];
-//          BYTE2(temp_V) = meta_data[15];
-//          BYTE3(temp_V) = meta_data[16];
-//          
-//          Judgment_01_data.voltage_V = temp_V;
-//          
-//          BYTE0(temp_A) = meta_data[17];
-//          BYTE1(temp_A) = meta_data[18];
-//          BYTE2(temp_A) = meta_data[19];
-//          BYTE3(temp_A) = meta_data[20];
-//          
-//          Judgment_01_data.current_A = temp_A;
-//          
-//          Judgment_01_data.power_W = Judgment_01_data.voltage_V * Judgment_01_data.current_A;		
-
-//          BYTE0(temp_J) = meta_data[38];
-//          BYTE1(temp_J) = meta_data[39];
-//          BYTE2(temp_J) = meta_data[40];
-//          BYTE3(temp_J) = meta_data[41];
-//          
-//          Judgment_01_data.remainJ = temp_J;
-//          break;}
-//        //打击信息
-//      
-//						case 0x02:{
-//          
-//          Judgment_02_data.weak = (meta_data[7]&0xf0)>>4;
-//          Judgment_02_data.weakid = meta_data[7]&0x0f;
-//          Judgment_02_data.ValueChange = meta_data[8]+(meta_data[9]<<8); 
-
-//          break;}
-//        case 0x03:{
-//          
-//          BYTE0(temp_ss) = meta_data[7];
-//          BYTE1(temp_ss) = meta_data[8];
-//          BYTE2(temp_ss) = meta_data[9];
-//          BYTE3(temp_ss) = meta_data[10];
-//          
-//          Judgment_03_data.small_bullet_speed = temp_ss;
-//          
-//          BYTE0(temp_sf) = meta_data[11];
-//          BYTE1(temp_sf) = meta_data[12];
-//          BYTE2(temp_sf) = meta_data[13];
-//          BYTE3(temp_sf) = meta_data[14];
-//          
-//          Judgment_03_data.small_bulet_frequency = temp_sf;
-//          
-//          BYTE0(temp_bs) = meta_data[15];
-//          BYTE1(temp_bs) = meta_data[16];
-//          BYTE2(temp_bs) = meta_data[17];
-//          BYTE3(temp_bs) = meta_data[18];
-//          
-//          Judgment_03_data.big_bullet_speed = temp_bs;
-//          
-//          BYTE0(temp_bf) = meta_data[19];
-//          BYTE1(temp_bf) = meta_data[20];
-//          BYTE2(temp_bf) = meta_data[21];
-//          BYTE3(temp_bf) = meta_data[22];
-//          
-//          Judgment_03_data.big_bulet_frequency = temp_bf;
-//      
-//        break;}
-//				
-//				case 0x04:{
-//					          
-//					Judgment_04_data.Robot_Color = (meta_data[7]&0x01);
-//					
-//					
-//					Judgment_04_data.Red_Base_Robot_status = (meta_data[7]&0x04)>>2;
-//					Judgment_04_data.Blue_Base_Robot_status = (meta_data[7]&0x10)>>4;
-//					Judgment_04_data.ResourceIsland_status = (meta_data[7]&0xC0)>>6;				
-//					Judgment_04_data.RedAirPortSta = (meta_data[8]&0x07);
-//					Judgment_04_data.BlueAirPortSta = (meta_data[8]&0x70)>>4;				
-//					Judgment_04_data.No1PillarSta = (meta_data[9]&0x07);
-//					Judgment_04_data.No2PillarSta = (meta_data[9]&0x70)>>4;
-//					Judgment_04_data.No3PillarSta = (meta_data[10]&0x07);
-//					Judgment_04_data.No4PillarSta = (meta_data[10]&0x70)>>4;
-//					Judgment_04_data.No5PillarSta = (meta_data[11]&0x07);
-//					Judgment_04_data.No6PillarSta = (meta_data[11]&0x70)>>4;
-//					Judgment_04_data.RedBulletBoxSta = (meta_data[12]&0x1);
-//					Judgment_04_data.BlueBulletBoxSta = (meta_data[12]&0x10)>>4;
-//					Judgment_04_data.RedBulletAmount = (meta_data[13]&0xFF);
-//					Judgment_04_data.RedBulletAmount = (meta_data[14]&0xFF)<<8;
-//					Judgment_04_data.BlueBulletAmount = (meta_data[15]&0xFF);
-//					Judgment_04_data.BlueBulletAmount = (meta_data[16]&0xFF)<<8;
-//					Judgment_04_data.No0BigRuneSta = (meta_data[17]&0x07);
-//					Judgment_04_data.No1BigRuneSta = (meta_data[17]&0x70)>>4;
-//					Judgment_04_data.AddDefendPrecent = (meta_data[18]&0xFF);
-//}
-//      
-//       }//switch 
-//      }//协议解算部分       
      }
 	}
 		
 }
-
-
-void SendtoReferee(uint8_t * send_data)
-{
-
-	send_data[0] = 0xA5;	
-	send_data[1] = 0x0C;
-	send_data[2] = 0x00;
-	send_data[3] = 0x04;
-
-	Append_CRC8_Check_Sum(send_data,5);
-	
-	send_data[5] = 0x05;
-	send_data[6] = 0x00;
-
-	Append_CRC16_Check_Sum(send_data , 21);
-
-}
-
-
-
 //crc8 generator polynomial:G(x)=x8+x5+x4+1
 const unsigned char CRC8_INIT = 0xff;
 const unsigned char CRC8_TAB[256] =

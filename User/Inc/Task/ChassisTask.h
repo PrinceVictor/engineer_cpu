@@ -12,7 +12,14 @@ typedef struct{
 	float temp;
 	float angle;
 	float angle_speed;
+	float angle_last;
 }_chassisYaw;
+
+typedef struct{
+	uint8_t flag;
+	float target;
+	uint8_t direction;
+}_rotate_move;
 
 typedef struct{
 	float Fb;
@@ -42,7 +49,6 @@ typedef struct{
 }_feedback;
 
 typedef struct wheelPara{
-	_pid_Para kpid[4];
 	_pid_Out pid[4];
 	_feedback feedback;
 	uint8_t	pid_flag;
@@ -56,13 +62,16 @@ typedef struct wheelPara{
 
 extern _wheelPara wheelInfo;
 extern _chassis chassisPara;
+extern _rotate_move rotate_para;
+
+extern _pid_Para wheelpid;
 
 void rotate_control(void);
-int8_t Lidar_Func(const uint8_t ,  _lidar_message* , int8_t );
+int8_t Lidar_Func(const uint8_t ,  _lidar_message* , const uint8_t );
 int8_t chassisControl(uint8_t);
-int8_t wheelSolute(_wheelPara*, _chassis*);
+int8_t wheelSolute(_wheelPara*, _chassis*, uint8_t);
 int8_t allParaInit(void);
-
+int8_t rotate_move(uint8_t , float , uint8_t );
 #endif
 
 

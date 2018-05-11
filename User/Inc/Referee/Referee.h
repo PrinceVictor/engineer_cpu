@@ -11,81 +11,98 @@
 #define BYTE2(dwTemp)       (*((char *)(&dwTemp) + 2))
 #define BYTE3(dwTemp)       (*((char *)(&dwTemp) + 3))
 
-#define BSP_USART3_DMA_RX_BUF_LEN	80
+#define BSP_USART3_DMA_RX_BUF_LEN	30
 #define REFEREE_REV_DMA_CNT (DMA1_Stream1->MA_CNDTR)//DMA?????
 
 typedef struct
 {
-	uint16_t left_time_S;
-	uint16_t left_HP;
-	float voltage_V;
-	float current_A;
-	float power_W;
-	uint8_t GameBegin;
-   float remainJ;
-  
-}_JUDGMENT_01_DATA;
+	uint8_t status_flag;
+	uint8_t turn_flag;
+	uint8_t move_flag;
+  uint8_t direction;
+}_lidar_flag;
 
 typedef struct
 {
-	uint8_t flag;
+	_lidar_flag flag;
 	float d1;
 	float d2;
 	float angle;
+	float get_x;
   
 }_lidar_message;
 
 typedef struct
 {
-	uint8_t weakid;
-	uint8_t weak;
-	uint16_t ValueChange;
-  uint8_t PowerOut;
+	uint16_t left_time_S;
+	uint8_t game_status;
+	uint8_t robot_level;
+	uint16_t left_HP;
+	uint16_t full_HP; 
+}_JUDGMENT_01_DATA;
+
+typedef struct
+{
+	uint8_t was_attacked_id; //0 front, 1 left, 2 back, 3 right, 4 up1 5 up2
+	uint8_t was_attacked_type; //0x0 attacked 0x01 module offline
 }_JUDGMENT_02_DATA;
 
 typedef struct
 {
-	float small_bullet_speed;
-	float small_bulet_frequency;
-	float big_bullet_speed;
-	float big_bulet_frequency;
+	uint8_t bullet_type;
+	float bullet_freqz;
+	float bullet_speed;
   
 }_JUDGMENT_03_DATA;
 
 typedef struct
 {
-	uint8_t Robot_Color;
-	uint8_t Red_Base_Robot_status;
-	uint8_t Blue_Base_Robot_status;
-	uint8_t ResourceIsland_status;
-	uint8_t RedAirPortSta;  
-  uint8_t BlueAirPortSta;
-  uint8_t No1PillarSta;  
-  uint8_t No2PillarSta;  
-	uint8_t No3PillarSta;  
-  uint8_t No4PillarSta;  
-  uint8_t No5PillarSta;  
-  uint8_t No6PillarSta;
-  uint8_t RedBulletBoxSta;  
-  uint8_t BlueBulletBoxSta;  
-  uint16_t RedBulletAmount;  
-  uint16_t BlueBulletAmount;
-	uint8_t No0BigRuneSta;  
-  uint8_t No1BigRuneSta;
-	uint8_t AddDefendPrecent;  
+	float chassis_voltage;
+	float chassis_current;
+	float chassis_power;
+	float chassis_power_left;
+	uint16_t small_shooter_heat;
+	uint16_t big_shooter_heat;
+  
 }_JUDGMENT_04_DATA;
 
-typedef struct 
+typedef struct
+{
+	uint8_t cardtype;
+	uint8_t cardsubnum;
+}_JUDGMENT_05_DATA;
+
+typedef struct
+{
+	uint8_t game_result;
+}_JUDGMENT_06_DATA;
+
+typedef struct
+{
+	uint8_t buff;
+	uint8_t buff_percent;
+}_JUDGMENT_07_DATA;
+
+typedef struct
+{
+	float x;
+	float y;
+	float z;
+	float degree;
+}_JUDGMENT_08_DATA;
+
+typedef struct
 {
 	float data1;
 	float data2;
 	float data3;
-  
-}_SEND_DIY_DATA;
+	uint8_t whole_status;
+}_diy_send;
+
 
 void New_Send_Data(uint8_t *data,uint16_t size);
 void refereeConfig(void);
-void mainfoldConfig(void);
+void nucConfig(void);
 extern _JUDGMENT_01_DATA Judgment_01_data;
 extern _JUDGMENT_02_DATA Judgment_02_data;
 extern _JUDGMENT_03_DATA Judgment_03_data;
@@ -95,7 +112,8 @@ void send_odm_msg1(float *);
 
 
 extern uint8_t Tx_Buf[TX_LEN];
-extern uint8_t re_data[TX_LEN]; 
+extern uint8_t Tx_Buf2[TX_LEN]; 
+
 extern unsigned char Get_CRC8_Check_Sum(unsigned char *,unsigned int,unsigned char );
 unsigned int Verify_CRC8_Check_Sum(unsigned char *, unsigned int );
 void Append_CRC8_Check_Sum(unsigned char *, unsigned int );

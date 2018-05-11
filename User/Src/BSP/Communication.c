@@ -1,7 +1,6 @@
 #include "Communication.h"
 unsigned char sbus_rx_buffer[18];
 
-
 void can1Config(void){
 	
 	GPIO_InitTypeDef GPIO_InitStructure; 
@@ -180,71 +179,6 @@ void remoteConfig(void){
 	USART_Cmd(USART1, ENABLE);
 }
 
-#if 0
-void Steering_Config(void)
-{
-	
-		GPIO_InitTypeDef GPIO_InitStructure;
-		TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-		TIM_OCInitTypeDef  TIM_OCInitStructure;
-
-		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE); 	
-		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-		
-		GPIO_PinAFConfig(GPIOB,GPIO_PinSource1,GPIO_AF_TIM3); 
-		
-		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;           
-		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;        
-		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;	
-		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;      
-		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;      
-		GPIO_Init(GPIOB,&GPIO_InitStructure);    
-		
-		TIM_TimeBaseStructure.TIM_Prescaler=8400-1;  //?????
-		TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up; //??????
-		TIM_TimeBaseStructure.TIM_Period=200-1;   //??????
-		TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
-		
-		TIM_TimeBaseInit(TIM3,&TIM_TimeBaseStructure);
-		TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; 
-    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; 
-    TIM_OCInitStructure.TIM_Pulse = 0; 
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCNPolarity_Low;
-    TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High; 
-    TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
-    TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Reset; 
- 
-    TIM_OC4Init(TIM3, &TIM_OCInitStructure);  
-    TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Enable);     
-   
-    TIM_CtrlPWMOutputs(TIM3,ENABLE);  
-    TIM_ARRPreloadConfig(TIM3, ENABLE);
-    TIM_Cmd(TIM3, ENABLE);
-
-}
-
-
-/*******************************************************************************
-* Function Name  : PMM_IO INIT
-* Description    : ???? 
-* Input          : None 
-* Output         : None
-* Return         : None
-****************************************************************************** */
-void PMM_Init(void)
-{
-	GPIO_InitTypeDef GPIO_InitStructure;
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE );
-  
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1; 	
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOA, &GPIO_InitStructure); 
-}
-
-#endif
-
 
 void USART1_IRQHandler(void)
 {	
@@ -285,9 +219,21 @@ void CAN1_RX0_IRQHandler(void)
 	{
 		CAN_ClearITPendingBit(CAN1, CAN_FIFO0);
 		CAN_Receive(CAN1,CAN_FIFO0,&canM1.canRx);
-		if(canM1.canRx.StdId == 0x01){
-//				can1Recieve = canM1.canRx.Data[0];
-}
+//		if(canM1.canRx.StdId == 0x01){
+////				can1Recieve = canM1.canRx.Data[0];
+//}
+//		if( canM1.canRx.StdId == 0x206 )//Pitch
+//		{
+//			motor.pitch.postion = (canM1.canRx.Data[0]*256 +canM1.canRx.Data[1]);
+//			motor.pitch.torque_feedback = (canM1.canRx.Data[2]*256 +canM1.canRx.Data[3]);
+//			//RxMessage206 = RxMessage;
+//		}
+//		else if(  canM1.canRx.StdId == 0x205 )//Yaw
+//		{
+//			motor.yaw.postion =(canM1.canRx.Data[0]*256 +canM1.canRx.Data[1]);
+//			motor.yaw.torque_feedback = (canM1.canRx.Data[2]*256 +canM1.canRx.Data[3]);
+//			//RxMessage205 = RxMessage;
+//		}
 	}		 
 	
 }
@@ -307,19 +253,9 @@ void CAN2_RX0_IRQHandler(void)
 	{
 		CAN_ClearITPendingBit(CAN2, CAN_IT_FMP0);
 		CAN_Receive(CAN2,CAN_FIFO0,&canM.canRx);
-		if( canM.canRx.StdId == 0x206 )//Pitch
-		{
-	
-			motor.pitch.fb_postion = canM.canRx.Data[0] * 256 + canM.canRx.Data[1];
-			//RxMessage206 = RxMessage;
-		}
-		else if(  canM.canRx.StdId == 0x205 )//Yaw
-		{
-			motor.yaw.fb_postion = canM.canRx.Data[0] * 256 + canM.canRx.Data[1];
-			//RxMessage205 = RxMessage;
-		}
 		
-		else if( (canM.canRx.StdId >= 0x201)&&( canM.canRx.StdId <= 0x204 ) )
+		
+		if( (canM.canRx.StdId >= 0x201)&&( canM.canRx.StdId <= 0x204 ) )
 		{
 			wheelInfo.feedback.Postion[canM.canRx.StdId - 0x201] = canM.canRx.Data[0]*256 +canM.canRx.Data[1];
 			
@@ -327,11 +263,22 @@ void CAN2_RX0_IRQHandler(void)
 		}
 		else if(canM.canRx.StdId == 0x001){
 			redlaser.verifed_code = canM.canRx.Data[0];
-			redlaser.flag = canM.canRx.Data[1];
+			redlaser.flag = canM.canRx.Data[1] & 0x3f;
+			redlaser.flag2 = canM.canRx.Data[2]& 0x03;
 //			redlaser._1st = canM.canRx.Data[1] & 0x01;
 //			redlaser._2nd = canM.canRx.Data[1] & 0x02;
 //			redlaser._3rd = canM.canRx.Data[1] & 0x04;
 //			redlaser._4th = canM.canRx.Data[1] & 0x08;
+		}
+		else if(canM.canRx.StdId == 0x401){
+			imu_yaw.yaw = 0.01f*((canM.canRx.Data[0]<<24) +(canM.canRx.Data[1]<<16)+(canM.canRx.Data[2]<<8)+canM.canRx.Data[3]);
+
+				chassisPara.yaw.angle_speed = (imu_yaw.yaw - imu_yaw.yaw_last)*1000.0f;
+//				if(abs(chassisPara.yaw.angle_speed) < 3.0f){
+//			chassisPara.yaw.angle_speed = 0;
+//				}
+//		chassisPara.yaw.angle += chassisPara.yaw.angle_speed ;
+				imu_yaw.yaw_last = imu_yaw.yaw;
 		}
 		
 

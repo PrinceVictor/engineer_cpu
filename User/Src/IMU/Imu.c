@@ -2,7 +2,7 @@
 
 #define GYRO_GAP 30
 #define K_ANGLESPEED_2_ANGLE 0.0000305f
-
+_imu_yaw imu_yaw = {0};
 _angle angle;
 volatile uint32_t lastUpdate, now; // 采样周期计数 单位 us
 float q0 = 1, q1 = 0, q2 = 0, q3 = 0;    // quaternion elements representing the estimated orientation
@@ -65,7 +65,7 @@ void IMUupdate(float gx, float gy, float gz, float ax, float ay, float az)
     }
     else	
     {
-       halfT =  ((float)(now - lastUpdate) / 2000000.0f);
+       halfT =  ((float)(now - lastUpdate) / 500000.0f);   //????
     }
     lastUpdate = now;	//更新时间
 

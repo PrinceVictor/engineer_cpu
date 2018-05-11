@@ -7,9 +7,10 @@ _wheelPara wheelInfo = {0};
 _chassis chassisPara = {0};
 int16_t set = 0;
 int8_t lidar_flag;
+_rotate_move rotate_para = {0};
 
-int const postion[8][2] = {
-	{25,360+ 310*4},{25,360+ 310*3},{25,360+ 310*2},{25,360+ 310*1},{25,360+ 310*0},{275+130,25},{275+130*1,25},{275+130*2,25}
+int const postion[5][2] = {
+	{220,360+ 310*0},{220,360+ 310*1+15},{220,360+ 310*2+35},{220,360+ 310*3+45},{220,360+ 310*4+70} //,{275+130,25},{275+130*1,25},{275+130*2,25}
 };
 
 _pid_Para wheelpid = {
@@ -20,6 +21,17 @@ _pid_Para wheelpid = {
 	0,	// d flag
 	800,	// i limit
 	6000,	// out limit, limit range from -32768 ~ 32768
+	3	//mode flag,  0 for disable, 3 for interval isolate
+};
+
+_pid_Para rescue_pid = {
+	20,	// kp
+	0.50f,	// ki	
+	0,	// kd
+	1,	// i flag
+	0,	// d flag
+	500,	// i limit
+	2000,	// out limit, limit range from -32768 ~ 32768
 	3	//mode flag,  0 for disable, 3 for interval isolate
 };
 
@@ -58,11 +70,6 @@ _pid_Para chassispid_shell = {
 
 int8_t allParaInit(void)
 {
-	wheelInfo.kpid[0] = wheelpid;
-	wheelInfo.kpid[1] = wheelpid;
-	wheelInfo.kpid[2] = wheelpid;
-	wheelInfo.kpid[3] = wheelpid;
-	
 	wheelInfo.K_speed = 19.0f;
 	wheelInfo.speedLimit = 7000;
 	chassisPara.x = 1.8f;
@@ -80,18 +87,10 @@ void para_update(){
 	if(sys1.super_runOr_normal){
 		chassisPara.x = 1.8f;
 		chassisPara.y = 1.2f;
-		wheelInfo.kpid[0] = super_wheelpid;
-		wheelInfo.kpid[1] = super_wheelpid;
-		wheelInfo.kpid[2] = super_wheelpid;
-		wheelInfo.kpid[3] = super_wheelpid;
 	}
 	else{
 		chassisPara.x = 1.5f;
 		chassisPara.y = 1.0f;
-		wheelInfo.kpid[0] = wheelpid;
-		wheelInfo.kpid[1] = wheelpid;
-		wheelInfo.kpid[2] = wheelpid;
-		wheelInfo.kpid[3] = wheelpid;
 	}
 }
 
@@ -111,7 +110,6 @@ void rotate_control(){
 														chassisPara.yaw.angle_speed);
 //	}
 
-		chassisPara.Rt = chassisPara.Rt ;
 		chassisPara.yaw.last_target = chassisPara.yaw.target;
 }
 
@@ -124,24 +122,40 @@ int8_t chassisControl(uint8_t flag)
 	else{
 	//pid for angle
 //		chassisPara.Rt =
+
 		rotate_control();
 
 //		chassisPara.Rt = 0;
 	//wheel solute
-	
-		wheelSolute(&wheelInfo, &chassisPara);
+	if(flag == 0x03){
+		chassisPara.y = 1.6f;
+	}
+	else {
+		chassisPara.y = 1.2f;
+	}
+		wheelSolute(&wheelInfo, &chassisPara, flag);
 	//pid for wheels
+	if(flag == 0x01 || flag == 0x03){
 		for(i=0; i<4; i++){
-			wheelInfo.out[i] = pidGet(&wheelInfo.kpid[i],
+			wheelInfo.out[i] = pidGet(&wheelpid,
 																&wheelInfo.pid[i],
 																wheelInfo.targetSpeed[i],	
 																(float)(wheelInfo.feedback.Speed[i]));
 		}
+	}
+	else if(flag == 0x02){
+		for(i=0; i<4; i++){
+			wheelInfo.out[i] = pidGet(&rescue_pid,
+																&wheelInfo.pid[i],
+																wheelInfo.targetSpeed[i],	
+																(float)(wheelInfo.feedback.Speed[i]));
+		}
+	}
 	return 1;
 }
 }
 
-int8_t wheelSolute(_wheelPara* para, _chassis* chassis){
+int8_t wheelSolute(_wheelPara* para, _chassis* chassis, uint8_t flag){
 	int i;
 //	if( abs(chassis->Rt) > 120.0f){
 //			chassisPara.x = 1.0f;
@@ -173,39 +187,188 @@ int8_t wheelSolute(_wheelPara* para, _chassis* chassis){
 
 
 
-int8_t Lidar_Func(const uint8_t control_flag,  _lidar_message* lidar1, int8_t pos){
-	static uint8_t lidar_flag;
+int8_t Lidar_Func(const uint8_t control_flag,  _lidar_message* lidar1,const uint8_t lidar_flag){
 	float d1,d2,angle;
-	if(control_flag != 1){
-		if(lidar_flag){
-			lidar_flag = 0;
-}
+	static uint16_t countflag = 0;
+	static uint8_t last_position=0;
+	static uint8_t rotate =0;
+	static uint8_t count1=0,count2=0,count3=0;
+	static uint8_t flag_fb=0,flag_lr=0;
+	static uint8_t come_in_rotate =0;
+	if(control_flag == 0x00){
 		return 0;
 }
+	else if(lidar_flag == 0x01){
+		if(rotate_move(lidar1->flag.turn_flag ,  lidar1->angle , lidar1->flag.direction) == 2 ){
+			relay_flag.up = 1;
+			relay_flag.can1_flag = 0x01;
+			lidar.flag.turn_flag = 0;
+		}
+	}
+	else if(lidar_flag == 0x02){
+		come_in_rotate =0;
+		count3 =0;
+		countflag = 0;
+		if(rotate_move(lidar1->flag.turn_flag ,  lidar1->angle , lidar1->flag.direction) == 2 ){
+			if(lidar.flag.direction){
+				relay_flag.bullet_position = 1;
+			}
+			else if(lidar.flag.direction == 0x01){
+			 relay_flag.bullet_position = 1;
+			}
+			relay_flag.status_flag = 0x03;
+			lidar.flag.turn_flag = 0;
+			
+		}
+		
+	}
+	else if(lidar_flag == 0x03){
+
+//		if(rotate_move(lidar1->flag.turn_flag ,  lidar1->angle , lidar1->flag.direction) == 2 ){
+//			relay_flag.status_flag = 0x03;
+//		}
+		if(relay_flag.bullet_position == 0x00){
+			return 0;
+		}
+		else {
+		
+		if(!come_in_rotate ){
+			chassisPara.Fb = 0;
+			chassisPara.Lr = 0;
+				countflag ++;	
+			}
+		if(!come_in_rotate && countflag> 300){
+			
+			rotate_move(lidar1->flag.turn_flag ,  lidar1->angle , lidar1->flag.direction);
+			if(abs(lidar.angle) < 1.0f){
+				if(count3 == 0x03){
+					come_in_rotate = 1;
+				}
+				count3++;
+			}
+			else{
+				count3 = 0;
+			}
+		}
+		else if(come_in_rotate){
+		if(last_position !=relay_flag.bullet_position ){
+			last_position = relay_flag.bullet_position;
+			flag_fb = 1;
+			flag_lr =1;
+//			come_in_rotate = 1;
+		}
+//		if(!flag_lr && !flag_fb&& !rotate && come_in_rotate){
+//			rotate = 1;
+
+//		}
+
+		
+		d1 = lidar.d1- postion[relay_flag.bullet_position-1][0];
+		if(lidar.d2 == 0){
+			flag_lr =1;
+			count2 = 0;
+			d2 = 0;
+		}
+		else{
+			d2 = lidar.d2- postion[relay_flag.bullet_position-1][1];
+		}
+		if(abs(d1)<15){
+			d1 = 0;
+			count1++;
+			if(count1 == 4){
+				flag_fb =0;
+			}
+		}
+		else{
+			count1 = 0;
+		}
+		if(abs(d2)<10){
+			d2 = 0;
+			count2++;
+			if(count2 == 4){
+				flag_lr =0;
+			}
+		}
+		else{
+			count2 = 0;
+		}
+		if(flag_lr|| flag_fb){
+
+		chassisPara.Lr = amplitudeLimiting(1, (d2 )/12.0f, 120);
+		chassisPara.Fb = -amplitudeLimiting(1, (d1 )/12.0f, 120);   //amplitudeLimiting(1, (d1 )/10.0f, 200);
+	}
 	else{
-		if(lidar1->flag){
-		d1 = lidar1->d1;
-		d2 = lidar1->d2;
-		if(abs(lidar1->angle)<1.0f) angle =0;
-		else angle = lidar1->angle/1000.0f;
-		chassisPara.yaw.target = chassisPara.yaw.target + angle;
-		chassisPara.Fb = amplitudeLimiting(1, (d1 )/10.0f, 200);
-		chassisPara.Lr = amplitudeLimiting(1, (d2 )/10.0f, 150);
-		lidar_flag = 1;
-	//	lidar1->flag = 0;
-		return 1;
+		chassisPara.Lr  = 0;
+		chassisPara.Fb = 0;
+	}
+		
 }
-else{
-		chassisPara.Rt = 0;
+	}
+	}
+	else if(lidar_flag == 0x00){
 		chassisPara.yaw.target = 0;
 		chassisPara.yaw.angle = 0;
-		lidar_flag = 1;
-	return -1;
-}
-	
-}
+		chassisPara.Fb = 0;   //amplitudeLimiting(1, (d1 )/10.0f, 200);
+		chassisPara.Lr = 0;
+	}
+		return 1;
 }
 
+//0 turn left, 1 turn right, target for turn digrees
+int8_t rotate_move(uint8_t flag, float target, uint8_t direction){
+	static float angle_temp = 0;
+  static uint32_t count = 0;
+	static uint8_t count_flag = 0;
+	static uint8_t last_direction = 0;
+	static float last_target =0;
+	float target_count, target_input = 0;
+	
+	if(!flag){
+		return 0;
+	}
+	
+	if(target != last_target){
+		count = 0;
+		last_direction = direction;
+		last_target = target ;
+		angle_temp = chassisPara.yaw.target;
+		count_flag = 1;
+	}
+	if(last_direction != direction){
+		angle_temp = chassisPara.yaw.target;
+		last_direction = direction;
+	}
+	if(count_flag){
+		count++;
+	}
+	target_count = count/1000.0f*3.141592f;
+	
+	if(target_count>1.5707f){
+		target_input = last_target;
+		count_flag = 0;
+	}
+	else target_input = last_target*sin(target_count);
+	
+	if(direction == 0){
+		chassisPara.yaw.target = angle_temp +  target_input;
+		if(abs(angle_temp +target -chassisPara.yaw.angle)<2.0f){
+		last_target = 0;
+		count_flag = 0;
+		rotate_para.flag =0;
+		return 2;
+	}
+	}
+	else if(direction == 1){
+		chassisPara.yaw.target = angle_temp - target_input;
+		if(abs(angle_temp -target -chassisPara.yaw.angle)<2.0f){
+		last_target = 0;
+		count_flag = 0;
+		rotate_para.flag =0;
+		return 2;
+	}
+	}
+		return 1;
+}
 static float KalmanFilter_speed(const float ResrcData,float ProcessNiose_Q,float MeasureNoise_R)
 {
    double R = MeasureNoise_R;
